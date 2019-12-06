@@ -1,6 +1,6 @@
 <template name="dingwei">
   <view class="location-header" bindtap="switchShop">
-    <image wx:if="{{shop.name}}" src="../../images/mini-logo.png"></image>
+    <image wx:if="{{shop.name}}" src="../../images/logored.png"></image>
     <text wx:if="{{shop.name}}">{{shop.name}}   [切换]</text>
     <text wx:if="{{!shop.name}}">正在定位附近门店...</text>
   </view>

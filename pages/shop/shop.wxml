@@ -15,7 +15,7 @@
             <view bindtap="go" class="shop-one flex-row" data-index="{{index}}" wx:for="{{list}}" wx:key="{{index}}">
                 <view class="flex-grow-0 flex-y-center">
                     <image wx:if="{{item.pic_url}}" src="{{item.pic_url}}" style="width:150rpx;height:150rpx;border-radius:150rpx;"></image>
-                    <image wx:else src="../../images/mini-logo.png" style="width:150rpx;height:150rpx;border-radius:150rpx;"></image>
+                    <image wx:else src="../../images/logored.png" style="width:150rpx;height:150rpx;border-radius:150rpx;"></image>
                 </view>
                 <view class="w-100 flex-grow-1" style="margin:0 20rpx;">
                     <view class="text-more" style="color:#353535;">{{item.name}}</view>

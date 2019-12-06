@@ -1,5 +1,6 @@
 <import src="/components/common/index"></import>
 <view class="page {{__page_classes}}">
+   <!-- 这里引入了登录页_toast/_toast -->
     <include src="/components/common/common"></include>
     <include src="/components/header/header"></include>
     <view class="body after-navber">
