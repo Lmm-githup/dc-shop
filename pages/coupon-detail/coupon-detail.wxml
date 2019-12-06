@@ -1,0 +1,54 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view class="no-content" wx:if="{{!list||list.length==0}}">暂无记录</view>
+        <view style="padding:24rpx 24rpx 0 24rpx;" wx:else>
+            <view class="flex-col flex-y-center detail-head">
+                <view style="color:#666666;">{{list.name}}</view>
+                <view style="color:#353535;font-weight:bold;font-size:25pt;padding:10rpx 0" wx:if="{{list.discount_type == 1}}">{{list.discount*10}}折</view>
+                <view style="color:#353535;font-weight:bold;font-size:25pt;padding:10rpx 0" wx:elif="{{list.discount_type == 4}}"></view>
+                <view style="color:#353535;font-weight:bold;font-size:25pt;padding:10rpx 0" wx:else>￥{{list.sub_price}}</view>
+                <view style="color:#353535;fs-b">{{list.min_price_desc}}</view>
+                <view bindtap="receive" class="flex-x-center detail-bu" data-index="{{list.id}}" style="background:#ff4544;color:#ffffff;" wx:if="{{list.is_receive==0 && list.status == -1}}">立即领取</view>
+                <view class="flex-x-center detail-bu" style="border:1rpx solid #ff4544;background:#ffffff;color:#ff4544;" wx:if="{{list.status > -1}}">已领取</view>
+                <view class="flex-x-center detail-bu" wx:if="{{list.status==0}}">未使用</view>
+                <view class="flex-x-center detail-bu" wx:if="{{list.status==1}}">已使用</view>
+                <view class="flex-x-center detail-bu" wx:if="{{list.status==2}}">已过期</view>
+            </view>
+            <image src="/images/coupon-details.png" style="display:block;height:48rpx;width:100%;"></image>
+            <view class="detail-prize">
+                <view class="barcode">
+                  <canvas style="height:80px;" canvas-id="barcode" />
+                  <view class="barnum" style="font-size:14px;line-height:30px;">{{brcode}}</view>
+                </view>
+                <!--<view class="detail-name">有效期</view>
+                <view class="detail-manual">
+                    <text wx:if="{{list.expire_type==2}}">{{list.begin_time}} ~ {{list.end_time}}</text>
+                    <text wx:if="{{list.expire_type==1}}">领取{{list.expire_day}}天内有效</text>
+                </view>
+                <view class="detail-name" wx:if="{{list.user_num > 0}}">数量限制</view>
+                <view class="detail-manual" wx:if="{{list.user_num > 0}}">
+                    <text>每用户可领取 {{list.user_num}} 张</text>
+                </view>
+                <view class="detail-name">使用规则</view>
+                <view class="detail-manual">
+                    <text class="user_coupon_font" >{{list.content}}</text>
+                </view>
+                <view class="detail-manual" wx:if="{{list.store_list &&list.store_list.length>0}}">
+                    <text class="user_coupon_font" >适应门店：
+                      <block wx:for="{{list.store_list}}" wx:key="{{item.index}}">
+                        {{item}}  
+                      </block>
+                    </text>
+                </view>-->
+                <block wx:if="{{list.rule}}">
+                    <view class="detail-name">使用说明</view>
+                    <view class="detail-manual"><text>{{list.rule}}</text></view>
+                </block>
+            </view>
+        </view>
+    </view>
+    <include src="/components/get-coupon/get-coupon.wxml"></include>
+    <include src="/components/footer/footer"></include>
+</view>

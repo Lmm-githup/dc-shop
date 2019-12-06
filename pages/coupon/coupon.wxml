@@ -1,0 +1,63 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view class="top-bar flex-row">
+            <navigator class="flex-grow-1 {{status==0?'active':''}}" openType="redirect" url="/pages/coupon/coupon?status=0">
+                <text>未使用</text>
+            </navigator>
+            <navigator class="flex-grow-1 {{status==1?'active':''}}" openType="redirect" url="/pages/coupon/coupon?status=1">
+                <text>已使用</text>
+            </navigator>
+            <navigator class="flex-grow-1 {{status==2?'active':''}}" openType="redirect" url="/pages/coupon/coupon?status=2">
+                <text>已过期</text>
+            </navigator>
+        </view>
+        <view class="coupon-list" wx:if="{{list&&list.length>0}}">
+            <block wx:for="{{list}}" wx:for-item="coupon" wx:key="{{item.id}}">
+                <view class="coupon-item coupon-status-{{coupon.status}}" style="margin-top:20rpx;">
+                    <image class="coupon-bg" src="/images/img-coupon-bg-{{coupon.status==0?0:1}}.png"></image>
+                    <image class="coupon-status-icon" src="/images/img-coupon-status-icon-{{coupon.status}}.png" wx:if="{{coupon.status!=0}}"></image>
+                    <view class="flex-row" style="height: 100%;overflow: hidden;position:relative">
+                        <view class="flex-grow-0 flex-col flex-y-center flex-x-center coupon-left">
+                            <view class="flex-row flex-y-bottom" wx:if="{{coupon.sub_price && coupon.voucherType != '折扣券' && coupon.voucherType != '礼品券'}}">
+                                <view class="fs-sm">￥</view>
+                                <view style="font-size: {{coupon.sub_price.length>4?'13':'19'}}pt;line-height: .9">
+                                    {{coupon.sub_price}}
+                                </view>
+                            </view>
+                            <view class="flex-row flex-y-bottom" wx:if="{{coupon.voucherType == '折扣券'}}">
+                                <view class="fs-sm"></view>
+                                <view style="font-size: {{coupon.sub_price.length>4?'13':'19'}}pt;line-height: .9">
+                                    {{coupon.discountRate * 10}}折
+                                </view>
+                            </view>
+                            <view class="flex-row flex-y-bottom" wx:if="{{coupon.voucherType == '礼品券'}}">
+                                <view class="fs-sm"></view>
+                                <view style="font-size: {{coupon.sub_price.length>4?'13':'19'}}pt;line-height: .9">
+                                    礼品券
+                                </view>
+                            </view>
+                            <view wx:if="{{coupon.voucherType != '礼品券'}}" class="fs-sm" style="margin-top: 10rpx">{{coupon.min_price_desc}}</view>
+                        </view>
+                        <view class="flex-grow-1 flex-y-center coupon-right">
+                            <view style="width:100%;">
+                                <navigator openType="navigateTo" url="/pages/coupon-detail/coupon-detail?user_coupon_id={{coupon.user_coupon_id}}">
+                                    <view class="flex-row flex-y-center mb-10" style="margin-bottom:5rpx;">
+                                        <view class="flex-grow-1">{{coupon.voucherName}}</view>
+                                    </view>
+                                    <view class="flex-row flex-y-center mb-10" style="margin-bottom:5rpx;">
+                                        <view class="flex-grow-1">{{coupon.voucherType}}</view>
+                                    </view>
+                                    <view class="fs-sm" style="color: #666666; font-size: 8pt;">{{coupon.begin_time}} ~ {{coupon.end_time}}</view>
+                                </navigator>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+        <view style="padding-top: 200rpx;color: #888;text-align: center" wx:else>暂无相关优惠券</view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

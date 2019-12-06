@@ -1,0 +1,73 @@
+<view id="_toast" wx:if="{{_toast}}">
+    <view class="{{_toast.hide?'hide':''}}" id="_toast_title">
+        <text>{{_toast.title}}</text>
+    </view>
+</view>
+<view class=" flex-row flex-x-center flex-y-center" id="_loading" wx:if="{{_loading}}">
+    <view class="{{_loading?'hide':''}}">
+        <image src="{{__wxapp_img.system.loading2.url}}"></image>
+    </view>
+</view>
+<view class="new-modal" wx:if="{{user_info_show}}">
+    <view class="new-modal-content">
+        <view class="new-modal-header" style="padding:80px 30rpx 0;line-height:80rpx;"></view>
+        <view class="new-modal-body" style="min-height:0;margin-bottom:0;max-height:none">
+            <view style="padding:52rpx 0 0 0;text-align: center">
+                <view><image src="/images/logo.png" style="width:430rpx;height:85rpx;"></image></view>
+                <view style="font-size:14px;width:100%;text-align:left;padding:50px 15%;">您暂未授权康佰家小程序获取你的信息,将无法正常使用小程序功能。如需要正常使用，请点击”授权“按钮</view>
+            </view>
+            <view class="flex-x-center">
+                <view>
+                    <button bindgetuserinfo="getUserInfo" bindtap="myLogin" class="btn new-modal-btn" openType="getUserInfo" style="background-color:rgb(30,71,156);width:560rpx;height:70rpx;border-radius:20rpx;color:#fff;margin-bottom:40rpx;line-height:35px;font-size:16px;">授权登录</button>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<block wx:if="{{user_bind_show}}">
+    <view class="new-modal" wx:if="{{!__user_info.binding&&store.option.phone_auth==1}}">
+        <view class="new-modal-content" wx:if="{{!user_login_show}}">
+            <view class="new-modal-header" style="padding:30rpx 0;line-height:60rpx;font-size:11pt;"> </view>
+            <view class="new-modal-body" style="min-height:0;margin-bottom:0;">
+                <view style="padding:32rpx 0 20rpx 0;text-align: center">
+                    <view><image src="/images/logo.png" style="width:430rpx;height:80rpx;margin:50px 0px;"></image></view>
+                </view>
+                <view style="padding:0 41rpx;">
+                    <!--<view class="flex-x-center" style="margin-bottom:40rpx;font-size:14px;">申请获取您微信绑定的手机号</view>-->
+                </view>
+                <view class="flex-x-center">
+                    <view>
+                        <button bindgetphonenumber="getPhoneNumber" class="btn new-modal-btn" hoverClass="none" openType="getPhoneNumber" style="margin-top:50px;background-color:#04be01;width:560rpx;height:70rpx;border-radius:20rpx;color:#fff;margin-bottom:40rpx;font-size:16px;line-height:35px;">
+                        <image src="../../images/icon-wechat-white.png" style="width:24px;height:24px;vertical-align:middle;"></image> 微信用户快捷登录
+                      </button>
+                    </view>
+                </view>
+                <view wx:if="{{account_login == '1'}}" style="padding:30px 41rpx;text-align:center;font-size:14px;" bindtap='setLogin'>
+                    账号密码登录
+                </view>
+            </view>
+        </view>
+        <view class="new-modal-content" wx:if="{{user_login_show}}">
+            <view class="new-modal-header" style="padding:30rpx 0;line-height:60rpx;font-size:11pt;"> </view>
+            <view class="new-modal-body" style="min-height:0;margin-bottom:0;max-height:600px;">
+                <view style="padding:32rpx 0 20rpx 0;text-align: center">
+                    <view><image src="/images/logo.png" style="width:430rpx;height:80rpx;margin:50px 0px;"></image></view>
+                </view>
+                <view style="margin-bottom:30px;padding:0px 50px;font-size:14px;">
+                   <input style="border-bottom:1px solid #ddd;line-heihgt:50px;height:50px;padding:0px 8px;" bindinput="bindKeyLoginAccount" placeholder="请输入账号" maxlength="16"></input>
+                   <input style="border-bottom:1px solid #ddd;line-heihgt:50px;height:50px;padding:0px 8px;" bindinput="bindKeyLoginPwd" placeholder="请输入密码" password="true" maxlength="16" ></input>
+                </view>
+                <view class="flex-x-center">
+                    <view>
+                        <button bindtap='bindUserLogin' style="background-color:#04be01;width:300rpx;height:80rpx;border-radius:40rpx;color:#fff;margin-bottom:40rpx;">登录</button>
+                    </view>
+                </view>
+                <view style="padding:0px 20rpx;text-align:center;font-size:14px;" bindtap='setPhoneAuth'>
+                    返回
+                </view>
+            </view>
+        </view>
+    </view>
+</block>
+
+

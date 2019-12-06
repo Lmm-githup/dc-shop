@@ -1,0 +1,42 @@
+page{
+  background-color:#fff;
+}
+
+.fund{
+  padding:0px 10px;
+}
+
+.title{
+  padding-left:10px;background-color:#f0f0f0;line-height:50px;
+}
+
+.fund .flex-row{
+  width:100%;
+  line-height:55px;
+  margin-bottom:10px;
+}
+
+.fund input{
+   line-height:50px;
+   height:50px;
+   border-bottom:1px solid #f0f0f0;
+   padding-left: 10px;
+   width:100%;
+}
+
+.upload-div{
+  margin-top:10px;
+}
+
+.upload-div image{
+   width:80px;
+   height:80px;
+   margin-right:15px;
+}
+.upload-btn{
+   width:80px;
+   height:80px;
+   background-color:#fff;
+   color:#999;
+   line-height:80px;
+}

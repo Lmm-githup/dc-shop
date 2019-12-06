@@ -1,0 +1,41 @@
+<view class="page" style="height:100%;">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="call-phone-div" bindtap="callPhone">
+       <image src="../../../images/callphone.png"></image>
+       您可以拨打<text>{{phone}}</text>直接进行药品信息沟通
+    </view>
+    <view class="keyword" wx:if="{{keyword}}"><text>{{keyword}}</text></view>
+    <block wx:if="{{goods_list}}">
+      <view class="search-result" wx:if="{{is_search && goods_list && goods_list.length > 0}}">
+        <view class="goods-list" style="padding-top: 20rpx">
+            <view class="goods-item" openType="navigate" wx:for="{{goods_list}}" wx:key="{{item.id}}">
+              <view class="goods-pic">
+                <image mode="aspectFill" wx:if="{{item.cover_pic}}" src="{{item.cover_pic}}"></image>
+                <image mode="aspectFill" wx:else src="../../../images/icon-no-img.png"></image>
+              </view>
+              <view class="goods-info">
+                <text class="goods-name">{{item.name}}</text>
+                <!--<text class="goods-price">{{item.storeName}}</text>-->
+                <button wx:if="{{item.good_id}}" data-bean="{{item}}" bindtap="goBuy" class="buy-button">立即购买</button>
+              </view>
+              <view class="goods-link">
+                 <view bindtap='goStore' data-bean="{{item}}"><image src="../../../images/icon-store.png"></image><text>有货门店</text></view>
+                 <view bindtap='goodsDetail' data-bean="{{item}}"><image src="../../../images/icon-intro.png"></image><text>查看说明</text></view>
+              </view>
+            </view>
+        </view>
+      </view>
+      <view class="search-result" wx:if="{{is_search && goods_list.length == 0}}">
+        <view class="flex-row flex-x-center" style="padding:36rpx 0;">
+          <view class="flex-row flex-y-center">
+            <view class="flex-grow-0" style="width:100rpx;height:100rpx;margin-right:40rpx;">
+              <image src="{{__wxapp_img.search.search_no.url}}" style="width:100rpx;height:100rpx;"></image>
+            </view>
+            <view class="flex-grow-1" style="color:#353535;">抱歉，没有相关药品</view>
+          </view>
+        </view>
+        <button style="margin:30px 50px;" type="primary" bindtap="findProduct">找药申请</button>
+      </view>
+    </block>
+</view>

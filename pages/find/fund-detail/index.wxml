@@ -1,0 +1,4 @@
+<view class="page" style="height:100%;">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+</view>

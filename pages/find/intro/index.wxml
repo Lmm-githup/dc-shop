@@ -1,0 +1,25 @@
+<import src="../../../wxParse/wxParse.wxml"></import>
+<view class="page" style="height:100%;">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <swiper autoplay="true" bindchange="hide" circular="true" class="goods-image-swiper" duration="300" indicatorActiveColor="#ff5c5c" indicatorDots="true" interval="5000">
+        <swiper-item wx:for="{{goods.carouselImg}}" wx:key="{{index}}">
+            <image class="goods-image" data-index="{{index}}" mode="aspectFill" src="{{item}}"></image>
+        </swiper-item>
+    </swiper>
+    <view class="goods-name">{{goods.productName}}</view>
+    <view class="goods-detail-title">商品详情</view>
+    <view class="goods-detail">
+        <view class="item" wx:if="{{goods.standard}}">产品规格：{{goods.standard}}</view>
+        <view class="item" wx:if="{{goods.brand}}">品牌：{{goods.brand}}</view>
+        <view class="item" wx:if="{{goods.unit}}">单位：{{goods.unit}}</view>
+        <view class="item" wx:if="{{goods.manufacturer}}">生产厂家：{{goods.manufacturer}}</view>
+        <view class="item" wx:if="{{goods.productUsage}}">用法用量：{{goods.productUsage}}</view>
+        <view class="item" wx:if="{{goods.indications}}">功能主治：{{goods.indications}}</view>
+        <view class="item" wx:if="{{goods.instructions}}">使用说明：{{goods.instructions}}</view>
+        <view class="item" wx:if="{{goods.sideEffects}}">不良反应：{{goods.sideEffects}}</view>
+        <view class="item" wx:if="{{goods.attention}}">注意事项：{{goods.attention}}</view>
+        <view class="item" wx:if="{{goods.taboo}}">不良反应：{{goods.taboo}}</view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

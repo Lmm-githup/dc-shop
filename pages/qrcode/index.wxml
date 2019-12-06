@@ -1,0 +1,18 @@
+<view class="page" style="height:100%;">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view class="flex flex-x-center flex-y-center" style="width: 100%;height: 100%;position: fixed;left: 0;top: 0;" wx:if="{{!qrcode_pic}}">
+            <view style="text-align: center;font-size: 9pt;color: #888">
+                <image src="{{__wxapp_img.system.loading_black.url}}" style="width: 50rpx;height: 50rpx"></image>
+                <view>正在生成二维码</view>
+            </view>
+        </view>
+        <block wx:else>
+            <view style="text-align: center">
+                <image src="{{qrcode_pic}}" style="width: 200px;height: 200px;margin-top: 35%;box-shadow: 0 0 4rpx rgba(0,0,0,.05)"></image>
+            </view>
+            <view style="text-align: center;line-height:50px;">请向收银员出示该页面，识别会员身份</view>
+        </block>
+    </view>
+</view>

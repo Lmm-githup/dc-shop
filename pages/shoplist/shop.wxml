@@ -1,0 +1,59 @@
+<view class="page {{__page_classes}}">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view class="search flex-y-center">
+            <view class="search-input flex-row">
+                <view bindtap='showAreaPicker' class="select-area"><image src='../../images/icon-down.png'></image></view>
+                <input bindblur="inputBlur" bindconfirm="inputConfirm" bindfocus="inputFocus" bindinput="input" class="input" confirmType="search" placeholder="请输入门店名称" value="{{keyword}}"></input>
+                <!--<view bindtap="search" class="search-btn flex-grow-0 flex-y-center flex-x-center flex-row {{show?'':'hidden'}}">
+                    <image class="flex-grow-0" src="{{__wxapp_img.shop.search.url}}" style="width:24rpx;height:24rpx;margin-right:10rpx;"></image>
+                    <view class="flex-grow-1">搜索</view>
+                </view>-->
+            </view>
+        </view>
+        <view class="shop-list w-100">
+          <block wx:if="{{!list || list.length == 0}}">
+            <view style="line-height:50px;text-align:center;color:#999;">暂无门店</view>
+          </block>
+          <block wx:else>
+            <view class="shop-one" style="margin-bottom:8px;" data-index="{{index}}" wx:for="{{list}}" wx:key="{{index}}">
+                <!--<view class="flex-grow-0 flex-y-center">
+                    <image wx:if="{{item.pic_url}}" src="{{item.pic_url}}" style="width:150rpx;height:150rpx;border-radius:150rpx;"></image>
+                    <image wx:else src="../../images/icon-no-img.png" style="width:150rpx;height:150rpx;border-radius:150rpx;"></image>
+                </view>-->
+                <view class="w-100" style="margin:0 20rpx;">
+                    <view class="text-more" style="color:#000;font-weight:bold;font-size:14px;">{{item.name}}</view>
+                    <view class="fs-sm" wx:if="{{item.shop_time}}" style="margin-top:22rpx;"><image  src="../../images/icon-time.png"/>营业时间：{{item.shop_time}}
+                    </view>
+                    <view bindtap="callPhone" data-bean="{{item}}" class="fs-sm phone-highlight" wx:if="{{item.mobile && item.mobile !='未知'}}" style="margin-top:22rpx;"><image class="shop-icon" src="../../images/callphone.png"/> {{item.mobile}}</view>
+                    <view class="fs-sm" wx:if="{{item.address}}" style="margin-top:22rpx;">{{item.address ? item.address : '未知'}}
+                    </view>
+                    <view class="fs-sm" style="margin-top:22rpx;">
+                      <image src="../../images/icon-juli.png"/> 距离：{{item.distance==-1?'无':item.distance}}
+                    </view>
+                </view>
+                <view class="w-100 flex-row" style="border-top:1px solid #f0f0f0;margin-top:10px;padding-top:10px;">
+                   <view class="shop-oper right-line flex-grow-0">
+                      <view class="shop-oper-item" bindtap="go" data-bean="{{item}}">
+                        <image src="../../images/icon-switch.png"/>切换门店
+                      </view>
+                   </view>
+                   <view class="shop-oper right-line flex-grow-0">
+                      <view class="shop-oper-item" bindtap="goShopDetail" data-bean="{{item}}">
+                        <image src="../../images/icon-detail.png"/>门店详情
+                      </view>
+                   </view>
+                   <view class="shop-oper flex-grow-0">
+                       <view class="shop-oper-item"  bindtap="goto" data-index="{{index}}">
+                        <image src="../../images/icon-location-nav.png"/>去这里
+                      </view>
+                   </view>
+                </view>
+            </view>
+            </block>
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+    <include src="./../../components/area-picker/area-picker.wxml"></include>
+</view>

@@ -1,0 +1,37 @@
+.fund-list{
+  padding-bottom:60px;
+}
+.no-data{
+  width:100%;
+  line-height:100px;
+  text-align:center;
+}
+.status{
+  text-align:right;
+}
+
+.flex-row{
+  line-height:30px;
+}
+
+.floot{
+  position: fixed;
+  bottom:0;
+  height:50px;
+  width:100%;
+  padding-top:5px;
+  background-color:#f0f0f0;
+}
+
+.search-button{
+  width:300px;
+  background-color:rgb(30,71,156);
+  color:#fff;
+}
+
+.image-div image{
+  float:left;
+  width:23%;
+  margin-left:1%;
+  height:90px;
+}

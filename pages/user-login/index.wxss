@@ -1,0 +1,32 @@
+page{
+  font-size:14px;
+}
+
+.user-info{
+  padding:10px;
+}
+.user-info .phone{
+   margin-top:15px;
+   margin-bottom:15px;
+}
+
+.user-info .phone .input{
+   float: left;
+   width:55%;
+}
+
+.user-info .phone .button{
+   float: right;
+   width:40%;
+}
+.user-info .code{
+   clear:both;
+   margin-top:15px;
+}
+
+.user-info input{
+  background-color:#fff;
+  line-height:40px;
+  height:40px;
+  padding-left:8px;
+}

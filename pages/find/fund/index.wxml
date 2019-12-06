@@ -1,0 +1,31 @@
+<view class="page" style="height:100%;">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class='fund-list' wx:if="{{fund_list.length > 0}}" >
+       <view style="background-color:#fff;padding:10px;margin-bottom:10px;clear:both;" wx:for="{{fund_list}}" wx:key="{{item.index}}">
+        <view class="flex-row" style="border-bottom:1px solid #f0f0f0">
+          <view class="flex-grow-1">
+              <view>{{item.created}}</view>
+          </view>
+          <view class="flex-grow-1 status">
+              {{item.status || '暂未处理'}}
+          </view>
+        </view>
+        <view class="flex-row" wx:if="{{item.productName}}">药品名称：{{item.productName}}</view>
+        <view class="flex-row" wx:if="{{item.specifications}}">药品规格：{{item.specifications}}</view>
+        <view class="flex-row" wx:if="{{item.manufEnterprise}}">生产企业：{{item.manufEnterprise}}</view>
+        <view class="flex-row" wx:if="{{item.comments}}">药品功效：{{item.comments}}</view>
+        <view class="flex-row" wx:if="{{item.num}}">需求数量：{{item.num}}</view>
+        <view class="flex-row" wx:if="{{item.contactName}}">联系方式：{{item.contactName}}({{item.phone}})</view>
+        <view class="flex-row image-div" wx:if="{{item.picture && item.image_list.length > 0}}">
+          <block wx:for="{{item.image_list}}" wx:key="{{item.index}}">
+            <image src="{{item}}"></image>
+          </block>
+        </view>
+      </view>
+    </view>
+    <view class="no-data" wx:else>
+      暂无数据
+    </view>
+    <view class="floot"><button class="search-button" bindtap='findProduct'>找药</button></view>
+</view>

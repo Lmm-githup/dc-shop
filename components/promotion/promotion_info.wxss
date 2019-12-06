@@ -1,0 +1,33 @@
+.promotion-list-item{
+  line-height:45px;
+  border-bottom:1px solid #f0f0f0;
+  font-size:12px;
+  clear:both;
+}
+
+.promotion-list-item .type{
+  color:red;
+  padding:0px 5px !important;
+  border:1px solid red;
+  margin-right:5px;
+  border-radius:5px;
+  line-height:20px;
+}
+
+.promotion_picker{
+  bottom:0px !important;
+}
+
+.promotion .img {
+    width: 94rpx;
+    height: 40rpx;
+    margin-left: 16rpx;
+}
+
+.promotion-list-item .img {
+    width: 16rpx;
+    height: 16rpx;
+    position:absolute;
+    right:20px;
+    margin-top:-3px;
+}

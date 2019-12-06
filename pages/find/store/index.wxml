@@ -1,0 +1,37 @@
+<view class="page" style="height:100%;">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="coupon-picker" style="background-color:#f7f7f7;">
+       <view class="no-data" wx:if="{{no_data}}">暂无数据</view>
+            <scroll-view class="coupon-list" scrollY="true" style="height: 100%;padding:0;background-color:#f7f7f7;">
+                <view class="flex-row shop-item" style="margin-bottom:8px;" data-index="{{index}}" wx:for="{{shop_list}}" wx:key="{{item.id}}">
+                    <view class="flex-grow-1">
+                        <view class="flex-row" style="margin-bottom:10rpx">
+                            <view class="flex-grow-1" style="font-size:14px;font-weight:bold;{{item.id==shop.id?'color:#ff4544':''}}">
+                                {{item.name}}
+                            </view>
+                            <view class="flex-grow-0" wx:if="{{item.distance!=-1}}">{{item.distance}}</view>
+                        </view>
+                        <view class="flex-row" style="margin-bottom: 20rpx">
+                            {{item.address}}
+                        </view>
+                        <view class="flex-row" style="margin-bottom: 20rpx">
+                            <view class="flex-grow-1">
+                                营业时间：{{!item.shop_time ? '08:00 - 22:00' : item.shop_time}}
+                            </view>
+                            
+                        </view>
+                        <view class="flex-row" style="line-height:30px;">
+                            <view class="flex-grow-1" data-bean="{{item}}" bindtap='callPhone'>
+                                <image src="../../../images/callphone.png"></image>{{item.mobile}}
+                            </view>
+                            <view class="flex-grow-0" data-bean="{{item}}" bindtap='goShopDetail'>
+                               门店详情 <image class="img" src="{{__wxapp_img.store.jiantou_r.url}}"></image>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+    <include src="/components/footer/footer"></include>
+</view>

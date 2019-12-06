@@ -1,0 +1,40 @@
+page{
+  background-color:#fff;
+}
+
+.user-info{
+  padding: 30px;
+  font-size:14px;
+}
+
+.user-info image{
+  width:100px;
+  height:100px;
+  margin: 10px 0px;
+  border-radius:50%;
+}
+
+.user-info .flex-row{
+   line-height:50px;
+   font-size:14px;
+   border-bottom:1px solid #f0f0f0;
+}
+
+.user-info .flex-row .value{
+   text-align:right;
+}
+
+.user-info .flex-row .value image{
+   width:15px;
+   height:15px;
+   margin-top:18px;
+}
+
+.user-info .flex-row .picker{
+   width:100%;
+   height:50px;
+}
+
+.user-info .flex-row input{
+   margin-top:10px;
+}

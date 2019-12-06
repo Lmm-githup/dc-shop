@@ -1,0 +1,45 @@
+<view class="page" style="height:100%;">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <form bindsubmit="formSubmit">
+      <view  class="title">请输入您要找的药品信息：</view>
+      <view class="fund">
+        <view class="flex-row">
+          <input placeholder="药品名称（必填）" name="productName"></input>
+        </view>
+        <view class="flex-row">
+          <input placeholder="药品规格（必填）" name="productSpec"></input>
+        </view>
+        <view class="flex-row">
+          <input type="number" placeholder="需求数量（必填）" name="stock"></input>
+        </view>
+        <view class="flex-row">
+          <input placeholder="生产企业（必填）" name="manufacturer"></input>
+        </view>
+        <view class="flex-row">
+          <input placeholder="功效描述" name="comments"></input>
+        </view>
+      </view>
+      <view class="title">请输入您的联系方式：</view>
+      <view class="fund">
+        <view class="flex-row">
+          <input placeholder="姓名" name="contactName"></input>
+        </view>
+        <view class="flex-row">
+          <input placeholder="联系电话（必填）" name="phone"></input>
+        </view>
+      </view>
+      <view class="title">上传图片（最多上传4张）：</view>
+      <view class="fund">
+        <view class="flex-row upload-div">
+          <block wx:for="{{image_list}}" wx:key="{{item.index}}">
+            <image src="{{item}}"></image>
+          </block>
+          <block wx:if="{{image_list.length < 4}}">
+            <button type="default" class="upload-btn" bindtap="chooseImage">+</button>
+          </block>
+        </view>
+        <button style="margin:30px 50px;background-color:rgb(30,71,156)" wx:if="{{disabled}}" type="primary" form-type="submit">提交</button>
+      </view>
+    </form>
+</view>

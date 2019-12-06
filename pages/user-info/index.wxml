@@ -1,0 +1,64 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body user-info">
+        <view class="flex-x-center">
+          <image class="avatar" src="{{user_info.avatar_url}}"></image>
+        </view>
+        <view class="flex-row" wx:if="{{user_info.card_no}}">
+           <view class="flex-grow-1">会员卡号</view>
+           <view class="flex-grow-1 value">{{user_info.card_no}}</view>
+        </view>
+        <view class="flex-row">
+           <view class="flex-grow-1">昵称</view>
+           <view class="flex-grow-1 value">{{user_info.nickname}}</view>
+        </view>
+        <!--<view class="flex-row">
+           <view class="flex-grow-1">姓名</view>
+           <view class="flex-grow-1 value">{{user_info.nickname}}</view>
+        </view>-->
+        <!--<view class="flex-row">
+           <view class="flex-grow-1">会员等级</view>
+           <view class="flex-grow-1 value">{{user_info.tier}}</view>
+        </view>-->
+        <view class="flex-row">
+           <view class="flex-grow-1">手机号</view>
+           <view class="flex-grow-1 value"><!-- bindtap='updatePhone'>-->
+            <text>{{user_info.binding}}</text>
+            <!--<image style="vertical-align:middle;margin-top:5px;" src="{{__wxapp_img.store.jiantou_r.url}}"></image>-->
+          </view>
+        </view>
+        <view class="flex-row">
+           <view class="flex-grow-1">性别</view>
+           <view class="flex-grow-1 value">
+             {{sex || '-'}}
+             <!--<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+              <view class="picker">
+                {{sex}}
+              </view>
+           </picker>-->
+           </view>
+        </view>
+        <view class="flex-row">
+           <view class="flex-grow-1">出生日期</view>
+           <view class="flex-grow-1 value">
+              {{birthday || '无'}}
+              <!--<picker mode="date" value="{{birthday}}" start="1900-01-01" bindchange="bindDateChange">
+              <view class="picker">
+                {{birthday}}
+              </view>
+            </picker>-->
+           </view>
+        </view>
+        <view class="flex-row">
+           <view class="flex-grow-1">邮箱</view>
+           <view class="flex-grow-1 value">
+            {{email || '无'}}
+             <!--<input bindinput="bindKeyInput" placeholder="请输入您的邮箱" value="{{email}}"></input>-->
+           </view>
+        </view>
+
+        <!--<button style="margin-top:30px;" type="primary" bindtap="saveUser">保存</button>-->
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

@@ -1,0 +1,20 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body user-info">
+      <view>
+         本功能仅用于康佰家内部员工绑定
+      </view>
+      <view class="phone">
+         <view class="input">
+          <input bindinput="bindKeyInput" placeholder="请输入员工号" value="{{loginName}}"></input>
+        </view>
+       </view>
+       <view style="clear:both;"></view>
+       <view class="code">
+          <input bindinput="bindCode" type='password' placeholder="请输入密码" value="{{loginPwd}}"></input>
+       </view>
+      <button style="margin-top:30px;" type="primary" bindtap="userBind">绑定</button>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

@@ -1,0 +1,128 @@
+<view class="page">
+  <include src="/components/common/common"></include>
+  <include src="/components/header/header"></include>
+  <view class="body">
+    <view class="page {{__page_classes}}">
+      <view class="body after-navber">
+        <view class="head">
+          <image class="head-img" src="{{__wxapp_img.integral.head.url}}"></image>
+          <view class="flex-row" style="position:relative;padding-top:40rpx;">
+            <view style="float:left;width:50%;">
+              <view class="flex-row flex-x-center my-integral">{{integral?integral:0}}</view>
+            </view>
+            <view style="float:left;width:50%;">
+              <view class="flex-row flex-x-center my-integral">{{behav_integral?behav_integral:0}}</view>
+            </view>
+          </view>
+          <view class="flex-row" style="position:relative;margin-bottom:15rpx;">
+            <view class="flex-grow-1 flex-x-center">
+              <view class="flex-row flex-x-center integral">
+                <view class="flex-row  flex-x-center">消费积分</view>
+              </view>
+            </view>
+            <view class="flex-grow-1 flex-x-center">
+              <view class="flex-row flex-x-center integral">
+                <view class="flex-row flex-x-center">行为积分</view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="flex-row my-exchange">
+          <view bindtap="exchange" class="flex-grow-1 flex-x-center">
+            <view class="flex-row">
+              <view class="flex-grow-0">
+                <image src="{{__wxapp_img.store.my_exchange.url}}"></image>
+              </view>
+              <view class="flex-grow-1">我的兑换</view>
+            </view>
+          </view>
+          <view bindtap="detail" class="flex-grow-1 flex-x-center">
+            <view class="flex-row">
+              <view class="flex-grow-0">
+                <image src="{{__wxapp_img.integral.detail.url}}"></image>
+              </view>
+              <view class="flex-grow-1">积分明细</view>
+            </view>
+          </view>
+          <view bindtap="goPond" class="flex-grow-1 flex-x-center">
+            <view class="flex-row">
+              <view class="flex-grow-0">
+                <image src="../../../images/icon-lottey.png"></image>
+              </view>
+              <view class="flex-grow-1">积分抽奖</view>
+            </view>
+          </view>
+        </view>
+
+        <view>
+          <view class="coupon-head">积分兑换专区 <text style="color:red;">(兑换后可前往附近任意门店使用)</text></view>
+          <view style="height:120rpx;border-top:1rpx solid #e2e2e2;border-bottom:1rpx solid #e2e2e2;">
+            <scroll-view class="scroll-view-x" scrollWithAnimation="true" scrollX="true">
+              <view class="flex-row">
+                <view bindtap="switchTab" class="scroll-view flex-grow-0" data-index="0" id="{{tab_index == 0 ? 'cat_name_active':''}}">
+                  <image class="item-image" src="../../../images/icon-gift.png"></image>
+                  <view>礼品</view>
+                </view>
+                <view bindtap="switchTab" class="scroll-view flex-grow-0" data-index="1" id="{{tab_index == 1 ?'cat_name_active':''}}">
+                  <image class="item-image" src="../../../images/icon-user-yhq.png"></image>
+                  <view>优惠券</view>
+                </view>
+                <view bindtap="switchTab" wx:if="{{goods_list.length > 0}}" class="scroll-view flex-grow-0" data-index="2" id="{{tab_index == 2 ?'cat_name_active':''}}">
+                  <image class="item-image" src="../../../images/icon-goods.png"></image>
+                  <view>商品</view>
+                </view>
+              </view>
+            </scroll-view>
+          </view>
+          <view wx:if="{{goods_list.length > 0 && tab_index == 2}}" class="flex-row" style="flex-wrap:wrap;justify-content:space-between;background-color:#f7f7f7;margin-left:-10rpx;">
+            <view bindtap="goodsInfo" class="goods" data-goods-id="{{item.id}}" wx:for="{{goods_list}}" wx:key="{{item.id}}">
+              <image class="goods-img" src="{{item.cover_pic}}"></image>
+              <view class="goods-name text-more-2">{{item.name}}</view>
+              <view class="goods-price">{{item.integral>0?item.integral+'消费' : (item.behav_integral >0 ? item.behav_integral+'行为' : 0)}}积分
+                <block wx:if="{{item.price>0}}">+￥{{item.price}}</block>
+              </view>
+            </view>
+          </view>
+          <view wx:if="{{goods_list.length > 0 && tab_index == 2}}" style="height:16rpx;background:#F7F7F7;"></view>
+          <view wx:if="{{goods_list.length == 0 && tab_index == 2}}" style="text-align:center;line-height:80px;">暂无可兑换的商品</view>
+
+          <view wx:if="{{gift_list.length > 0 && tab_index == 0}}" class="flex-row" style="flex-wrap:wrap;justify-content:space-between;background-color:#f7f7f7;margin-left:-10rpx;">
+            <view bindtap="couponInfo" class="goods" data-id="{{item.id}}" wx:for="{{gift_list}}" wx:key="{{item.id}}">
+              <image class="goods-img" src="{{item.cover_img}}"></image>
+              <view class="goods-name text-more-2">{{item.product_name}}</view>
+              <view class="goods-price">
+                  {{item.points}}{{item.point_type}}
+              </view>
+            </view>
+          </view>
+          <view wx:if="{{gift_list.length > 0 && tab_index == 0}}" style="height:16rpx;background:#F7F7F7;"></view>
+          <view wx:if="{{gift_list.length == 0 && tab_index == 0}}" style="text-align:center;line-height:80px;">暂无可兑换的礼品券</view>
+
+           <view class="exchange-coupon" wx:if="{{coupon_list.length>0 && tab_index == 1}}">
+            <view style="margin-left:24rpx;">
+                <view class="coupon_list">
+                  <view bindtap="couponInfo" class="scroll-view-item" data-id="{{item.id}}" style="z-index:3;background-image:url({{__wxapp_img.coupon.index.url}})" wx:for="{{coupon_list}}" wx:key="{{item.id}}">
+                    <view class="flex-grow-1" style="z-index:1">
+                      <view>
+                        <view class="flex-row flex-x-center flex-y-center" style="height:80rpx;margin-right:35px;">
+                          <view style="margin-right:6rpx;" wx:if="{{item.discount_type != 1}}">￥</view>
+                          <view style="font-size:15pt;line-height:0.8">
+                            <text wx:if="{{item.discount_type == 1}}">{{item.sub_price}}折</text>
+                            <text wx:else>{{item.sub_price}}</text>
+                          </view>
+                        </view>
+                        <view class="flex-x-center flex-y-center" style="margin-right:35px;height:25px;font-size:8pt">{{item.name}}</view>
+                        <view class="flex-grow-0 flex-x-center flex-y-center duihuan" style="z-index:1">立即兑换</view>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+            </view>
+          </view>
+          <view wx:if="{{coupon_list.length == 0 && tab_index == 1}}" style="text-align:center;line-height:80px;">暂无优惠券</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <include src="/components/footer/footer"></include>
+</view>

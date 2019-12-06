@@ -1,0 +1,73 @@
+<!--<view class="attr-picker promotion_picker" wx:if="{{show_promotion_picker}}">
+    <view class="content-box">
+        <view class="flex-row" style="border-bottom: 1rpx solid #e3e3e3;padding: 0px 0px 0px 15px;height:40px;line-height:40px;">
+            <view class="flex-grow-0" style="flex:1">
+                促销
+            </view>
+            <view class="flex-grow-0">
+                <view bindtap="hidePromotionPicker" class="flex-x-center flex-y-center" style="width: 100rpx;height: 40px">
+                    <image src="{{__wxapp_img.store.close.url}}" style="width: 30rpx;height: 30rpx"></image>
+                </view>
+            </view>
+        </view>
+        <scroll-view scrollY="true" style="max-height: 650rpx;">
+            <view style="padding: 24rpx 28rpx">
+                <view wx:for="{{goods.promotion_list}}">
+                    <view class="promotion-list-item">
+                      <text class="type" wx:if="{{item.m_type==1}}">减免运费</text>
+                      <text class="type" wx:if="{{item.m_type==2}}">满减</text>
+                      <text class="type" wx:if="{{item.m_type==3}}">满赠</text>
+                      <text class="type" wx:if="{{item.m_type==4}}">多买多送</text>
+                      <text class="type" wx:if="{{item.m_type==5}}">折扣</text>
+                      <text class="type" wx:if="{{item.m_type==6}}">套餐</text>
+                      <text class="name">{{item.name}}</text>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>-->
+
+<view class="share-modal active" wx:if="{{show_promotion_picker}}">
+    <view class="share-modal-body" style="padding-top: 10rpx;background: #ffffff;">
+    <view class="flex-row" style="border-bottom: 1rpx solid #e3e3e3;padding: 0px 0px 0px 15px;height:40px;line-height:40px;">
+            <view class="flex-grow-0" style="flex:1">
+                促销
+            </view>
+            <view class="flex-grow-0">
+                <view bindtap="hidePromotionPicker" class="flex-x-center flex-y-center" style="width: 100rpx;height: 40px">
+                    <image src="{{__wxapp_img.store.close.url}}" style="width: 30rpx;height: 30rpx"></image>
+                </view>
+            </view>
+        </view>
+        <view class="flex-row">
+            <scroll-view scrollY="true" style="max-height: 650rpx;">
+              <view style="padding: 24rpx 28rpx">
+                  <view wx:for="{{goods.promotion_list}}" wx:key="{{item.id}}" flex-row flex-y-center>
+                      <block wx:if="{{item.m_type==6}}">
+                        <navigator url="/pages/promotion/list?id={{item.id}}">
+                        <view class="promotion-list-item flex-grow-1 flex-row flex-y-center">
+                          <text class="type">套餐</text>
+                          <text class="name">{{item.name}}</text>
+                          <image class="img" src="{{__wxapp_img.store.jiantou_r.url}}"></image>
+                        </view>
+                        </navigator>
+                      </block>
+                      <block wx:else>
+                        <view class="promotion-list-item flex-grow-1 flex-row flex-y-center">
+                          <text class="type" wx:if="{{item.m_type==1}}">运费</text>
+                          <text class="type" wx:if="{{item.m_type==2}}">满减</text>
+                          <text class="type" wx:if="{{item.m_type==3}}">满赠</text>
+                          <text class="type" wx:if="{{item.m_type==4}}">多买多送</text>
+                          <text class="type" wx:if="{{item.m_type==5}}">折扣</text>
+                          <text class="name">{{item.name}}</text>
+                        </view>
+                      </block>
+                  </view>
+              </view>
+          </scroll-view>
+        </view>
+    </view>
+</view>
+
+

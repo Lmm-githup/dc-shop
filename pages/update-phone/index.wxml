@@ -1,0 +1,23 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body user-info">
+      <view>
+         请输入您要更新的手机号码后获取并填写新的验证码
+      </view>
+      <view class="phone">
+         <view class="input">
+          <input bindinput="bindKeyInput" placeholder="请输入手机号" value="{{phone}}"></input>
+        </view>
+        <view class="button">
+           <button type="warning" bindtap="getCode">{{text}}</button>
+        </view>
+       </view>
+       <view style="clear:both;"></view>
+       <view class="code">
+          <input bindinput="bindCode" placeholder="请输入验证码" value="{{code}}"></input>
+       </view>
+      <button style="margin-top:30px;" type="primary" bindtap="savePhone">保存</button>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>
