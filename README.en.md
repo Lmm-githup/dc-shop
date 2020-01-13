@@ -1,7 +1,7 @@
 # kbj-applet
 
 #### Description
-康佰佳小程序
+德成小程序
 
 #### Software Architecture
 Software architecture description
