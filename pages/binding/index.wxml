@@ -3,7 +3,7 @@
     <include src="/components/header/header"></include>
     <view class="body user-info">
       <view>
-         本功能仅用于康佰家内部员工绑定
+         本功能仅用于德成鸿业内部员工绑定
       </view>
       <view class="phone">
          <view class="input">
@@ -14,7 +14,7 @@
        <view class="code">
           <input bindinput="bindCode" type='password' placeholder="请输入密码" value="{{loginPwd}}"></input>
        </view>
-      <button style="margin-top:30px;" type="primary" bindtap="userBind">绑定</button>
+      <button style="margin-top:30px;background-color: #fa8455 ;background-image: linear-gradient(to bottom right, #fa8455, #fc4658);border-radius:20px" type="primary" bindtap="userBind">绑定</button>
     </view>
     <include src="/components/footer/footer"></include>
 </view>

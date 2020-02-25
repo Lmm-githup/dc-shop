@@ -1,5 +1,5 @@
 .user-info {
-    height: 348rpx;
+    height: 307rpx;
     color: #fff;
     position: relative;
 }
@@ -7,7 +7,9 @@
 .user-info view {
     z-index: 1;
 }
-
+.user-info>view{
+    margin-top:110rpx;
+} 
 .user-info .user-info-bg {
     position: absolute;
     top: 0;
@@ -18,15 +20,16 @@
 }
 
 .user-info .avatar {
-    width: 130rpx;
-    height: 130rpx;
+    width: 150rpx;
+    height: 150rpx;
     border-radius: 99999rpx;
-    border: 5rpx solid #fff;
+    border: 10rpx solid rgba(246, 240, 240, 0.5);
     margin: 0 24rpx;
 }
 
 .user-info .user-name {
     font-weight: bold;
+    color:black;
 }
 
 .user-info .my-address {
@@ -51,6 +54,7 @@
     display: block;
     border-bottom: 1rpx solid #e3e3e3;
     padding: 24rpx;
+    font-size: 14.5px;
 }
 
 .order-block .nav-item {
@@ -226,20 +230,20 @@ button::after {
 }
 
 .wallet-1 {
-    background-color: #fbfbfb;
-    width: 310rpx;
+    background-color: #fff;
+    /* width: 310rpx; */
     height: 100%;
 }
 
 .wallet-2 {
     background-color: #fff;
-    width: 440rpx;
+    /* width: 440rpx; */
     height: 100%;
 }
 
 .wallet-3 {
     background-color: #fff;
-    width: 300rpx;
+    /* width: 300rpx; */
     height: 100%;
 }
 
@@ -266,4 +270,10 @@ button::after {
     width: 700rpx;
     color: #666;
     box-shadow: 0px 0px 12rpx 1rpx #ddd;
+}
+.function{
+    display: block;
+    border-bottom: 1rpx solid #e3e3e3;
+    padding: 24rpx;
+    font-size: 14.5px;
 }

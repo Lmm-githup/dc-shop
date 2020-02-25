@@ -51,9 +51,9 @@ form {
     display: flex;
     flex-direction: row;
     background: #fff;
-    border: 1rpx solid #e3e3e3;
+    border: 1rpx solid #fc4658;
     height: 64rpx;
-    border-radius: 10rpx;
+    border-radius: 30rpx;
 }
 
 .input-box view {

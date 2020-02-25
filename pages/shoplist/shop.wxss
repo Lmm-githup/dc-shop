@@ -1,14 +1,15 @@
 .search {
     width: 100%;
-    height: 90rpx;
+    height: 95rpx;
 }
 
 .search-input {
     width: 100%;
-    height: 56rpx;
-    border-radius: 10rpx;
+    height: 61rpx;
+    border-radius: 35rpx;
     margin: 0 24rpx;
     background-color: #fff;
+    border: 1px solid #fc4658;
 }
 
 .input-pp {
@@ -49,8 +50,8 @@
 
 .select-area image{
   width:16px;
-  height:12px;
-  margin-top:8px;
+  height:7px;
+  margin-top:12px;
 }
 
 .shop-icon{

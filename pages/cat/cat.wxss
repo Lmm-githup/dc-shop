@@ -1,5 +1,5 @@
 .cat-list {
-    background: #f7f7f7;
+    background: #ededf5;
 }
 
 .cat-list .cat-item {
@@ -10,10 +10,13 @@
 
 .cat-list .cat-item.active {
     background: #fff;
-    color: #ff4544;
-    border-left-color: #ff4544;
+    color: #11cefc;
+    border-left-color: #11cefc;
 }
-
+/* 添加 */
+.cat-list .cat-item.active .cat-name{
+    border: none;
+}
 .cat-list .cat-item image {
     margin-right: 16rpx;
 }
@@ -22,6 +25,9 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+    line-height: 106rpx;
+    width: 78%;
+    border-bottom:1px solid #ccc;
 }
 
 .sub-cat-box {

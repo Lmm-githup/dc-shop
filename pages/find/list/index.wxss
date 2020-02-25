@@ -2,7 +2,7 @@
   line-height:40px;
   padding:0px 10px;
   background-color:rgb(246,231,216);
-  text-align:center;
+  /* text-align:center; */
   font-size:12px;
 }
 .call-phone-div image{

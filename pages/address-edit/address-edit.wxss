@@ -1,17 +1,20 @@
 .bottom-bar {
     position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    bottom: 60rpx;
+    left: 4%;
+    width: 93%;
     z-index: 1000;
 }
 
 .bottom-bar view {
     background: #ff4544;
     text-align: center;
-    height: 100rpx;
-    line-height: 100rpx;
+    height: 80rpx;
+    line-height: 80rpx;
     color: #fff;
+    border-radius: 50rpx;
+    background-image: linear-gradient(to bottom right, #fb8575 , #fc4658);
+    font-size: 30rpx;
 }
 
 .edit-row {

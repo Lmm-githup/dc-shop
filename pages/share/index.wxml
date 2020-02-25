@@ -85,7 +85,7 @@
             <view class="item border-bottom"></view>
         </view>
     </view>
-    <view class="after-navber" style="background-color:#fff;height:100%" wx:if="{{__user_info&&__user_info.is_distributor!=1}}">
+    <view class="after-navber" style="background-color:#fff;height:100vh" wx:if="{{__user_info&&__user_info.is_distributor!=1}}">
         <view style="padding-top:150rpx">
             <view class="flex-row flex-x-center">
                 <view class="">

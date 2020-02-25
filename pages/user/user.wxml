@@ -4,9 +4,9 @@
     <view class="body after-navber">
         <view class="page {{__page_classes}}">
             <view class="body after-navber">
-                <view style="position:relative;">
+                <view style="position:relative;background:#fff">
                     <view class="user-info flex-row flex-y-center" wx:if="{{style.top==0}}">
-                        <image class="user-info-bg" mode="aspectFill" src="{{user_center_bg}}"></image>
+                        <image class="user-info-bg" src="../../images/bg-img.png"></image>
                         <view bindtap='goUserInfo' class="flex-grow-1 flex-y-center flex-row userinfo-name">
                             <view class="flex-grow-0">
                                 <image class="avatar" src="{{user_info.avatar_url}}"></image>
@@ -29,7 +29,7 @@
                         </view>
                     </view>
                     <view class="user-info flex-row flex-x-center flex-y-center" wx:if="{{style.top==1}}">
-                        <image class="user-info-bg" mode="aspectFill" src="{{user_center_bg}}"></image>
+                        <image class="user-info-bg" src="../../images/bg-img.png"></image>
                         <view bindtap='goUserInfo' >
                             <view class="flex-x-center">
                                 <image class="avatar" src="{{user_info.avatar_url}}"></image>
@@ -45,8 +45,9 @@
                             </view>
                         </view>
                     </view>
+                    <!-- 原本{{user_center_bg}} -->
                     <view class="user-info flex-row flex-y-center flex-x-center" wx:if="{{style.top==2}}">
-                        <image class="user-info-bg" mode="aspectFill" src="{{user_center_bg}}"></image>
+                        <image class="user-info-bg" src="../../images/bg-img.png"></image>
                         <view class="flex-y-center user-info-1">
                             <view bindtap='goUserInfo' class="flex-grow-1 flex-y-center flex-row">
                                 <view class="flex-grow-0">
@@ -79,7 +80,8 @@
                     </view>
                 </view>
                 <view class="wallet flex-row" wx:if="{{wallet&&wallet.is_wallet==1}}">
-                    <view class="flex-grow-0 wallet-1 flex-x-center flex-y-center" style="{{wallet.re==1?'width:150rpx;':''}}">
+                    <!-- class="flex-grow-0 wallet-1 flex-x-center flex-y-center" style="{{wallet.re==1?'width:150rpx;':''}}" -->
+                    <view class="flex-grow-0 wallet-1 flex-x-center flex-y-center" style="{{wallet.re==1?'width:33%;':'width:50%'}}">
                         <view bindtap="goMyCoupon">
                             <view class="flex-x-center">
                                 <image src="../../images/icon-user-yhq.png" style="width:48rpx;height:48rpx;margin-bottom:20rpx;"></image>
@@ -87,8 +89,9 @@
                             <view class="fs-sm">我的优惠券</view>
                         </view>
                     </view>
-                    <view bindtap="integral_mall" class="flex-grow-0 {{wallet.re==1?'wallet-3':'wallet-2'}} flex-x-center flex-y-center" data-integral="{{user_info.integral}}">
-                        <view class="flex-grow-1 flex-y-center flex-col">
+                     <!-- class="flex-grow-0 {{wallet.re==1?'wallet-3':'wallet-2'}} flex-x-center flex-y-center" data-integral="{{user_info.integral}}" -->
+                    <view bindtap="integral_mall" class="flex-grow-0 wallet-1 flex-x-center flex-y-center" data-integral="{{user_info.integral}}" style="{{wallet.re==1?'width:33%;':'width:50%'}}">
+                        <view class="flex-grow-1 flex-y-center flex-col" style="border-left:1px solid #ccc">
                             <view class="num-1 flex-x-center">{{user_info.integral}}/{{user_info.behav_integral}}</view>
                             <view class="flex-row num-2 flex-x-center">
                                 <image class="flex-grow-0" src="{{wallets.status_0.icon}}" style="width:26rpx;height:26rpx;margin-right:10rpx;"></image>
@@ -96,8 +99,9 @@
                             </view>
                         </view>
                     </view>
-                    <view class="flex-grow-0 {{wallet.re==1?'wallet-3':'wallet-2'}}  flex-x-center flex-y-center" wx:if="{{wallet.re==1}}">
-                        <view class="flex-grow-1 flex-y-center flex-col">
+                    <!-- class="flex-grow-0 {{wallet.re==1?'wallet-3':'wallet-2'}}  flex-x-center flex-y-center" wx:if="{{wallet.re==1}}" -->
+                    <view class="flex-grow-0 wallet-1 flex-x-center flex-y-center" wx:if="{{a==1}}" style="{{wallet.re==1?'width:33%;':''}}">
+                        <view class="flex-grow-1 flex-y-center flex-col" style="border-left:1px solid #ccc">
                             <navigator hoverClass="none" url="/pages/balance/balance">
                                 <view class="num-1 flex-x-center">{{user_info.money}}</view>
                                 <view class="flex-row num-2 flex-x-center">
@@ -109,7 +113,7 @@
                     </view>
                 </view>
                 <view class="order-block" wx:if="{{setting&&setting.is_order==1}}">
-                    <navigator class="my-order" url="/pages/order/order?status=-1">我的订单</navigator>
+                    <navigator class="my-order" url="/pages/order/order?status=-1">我的订单<text style="position:absolute;right:15rpx;font-size:12px;">全部订单></text></navigator>
                     <view class="flex-row">
                         <view class="flex-grow-1">
                             <navigator class="nav-item" url="/pages/order/order?status=0">
@@ -162,6 +166,7 @@
                         </view>
                     </view>
                 </view>
+
                 <view class="option-list" wx:if="{{style.menu==0&&wallet.is_menu==1}}">
                     <block wx:for="{{menus}}" wx:key="{{item.id}}">
                         <block wx:if="{{item.open_type=='navigator'}}">
@@ -266,7 +271,9 @@
                         </block>
                     </block>
                 </view>
+                <!-- 功能服务 -->
                 <view class="options-list" style="background-color: #fff;" wx:if="{{style.menu==1&&wallet.is_menu==1}}">
+                    <view class="function">功能服务</view>
                     <view class="flex-row" style="flex-wrap: wrap">
                         <block wx:for="{{menus}}" wx:key="{{item.id}}">
                             <block wx:if="{{item.open_type=='navigator'}}">

@@ -3,7 +3,7 @@
     <include src="/components/header/header"></include>
     <view class="call-phone-div" bindtap="callPhone">
        <image src="../../../images/callphone.png"></image>
-       您可以拨打<text>{{phone}}</text>直接进行药品信息沟通
+        您可以拨打<text>{{phone}}</text>直接进行药品信息沟通
     </view>
     <view class="keyword" wx:if="{{keyword}}"><text>{{keyword}}</text></view>
     <block wx:if="{{goods_list}}">
@@ -35,7 +35,7 @@
             <view class="flex-grow-1" style="color:#353535;">抱歉，没有相关药品</view>
           </view>
         </view>
-        <button style="margin:30px 50px;" type="primary" bindtap="findProduct">找药申请</button>
+        <button style="margin:30px 50px; background-color: #fa8455 ;background-image: linear-gradient(to bottom right, #fa8455, #fc4658);border-radius:20px" type="primary" bindtap="findProduct">找药申请</button>
       </view>
     </block>
 </view>

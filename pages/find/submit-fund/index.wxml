@@ -5,16 +5,16 @@
       <view  class="title">请输入您要找的药品信息：</view>
       <view class="fund">
         <view class="flex-row">
-          <input placeholder="药品名称（必填）" name="productName"></input>
+          <span style="color:red">*</span><input placeholder="药品名称（必填）" name="productName"></input>
         </view>
         <view class="flex-row">
-          <input placeholder="药品规格（必填）" name="productSpec"></input>
+         <span style="color:red">*</span><input placeholder="药品规格（必填）" name="productSpec"></input>
         </view>
         <view class="flex-row">
-          <input type="number" placeholder="需求数量（必填）" name="stock"></input>
+          <span style="color:red">*</span><input type="number" placeholder="需求数量（必填）" name="stock"></input>
         </view>
         <view class="flex-row">
-          <input placeholder="生产企业（必填）" name="manufacturer"></input>
+          <span style="color:red">*</span><input placeholder="生产企业（必填）" name="manufacturer"></input>
         </view>
         <view class="flex-row">
           <input placeholder="功效描述" name="comments"></input>
@@ -26,7 +26,7 @@
           <input placeholder="姓名" name="contactName"></input>
         </view>
         <view class="flex-row">
-          <input placeholder="联系电话（必填）" name="phone"></input>
+          <span style="color:red">*</span><input placeholder="联系电话（必填）" name="phone"></input>
         </view>
       </view>
       <view class="title">上传图片（最多上传4张）：</view>
@@ -39,7 +39,7 @@
             <button type="default" class="upload-btn" bindtap="chooseImage">+</button>
           </block>
         </view>
-        <button style="margin:30px 50px;background-color:rgb(30,71,156)" wx:if="{{disabled}}" type="primary" form-type="submit">提交</button>
+        <button style="margin:30px 50px;background-color: #fa8455 ;background-image: linear-gradient(to bottom right, #fa8455, #fc4658);border-radius:20px" wx:if="{{disabled}}" type="primary" form-type="submit">提交</button>
       </view>
     </form>
 </view>

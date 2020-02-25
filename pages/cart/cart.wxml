@@ -8,17 +8,17 @@
                     <view class="cart-checkbox {{cart_check_all?'active':''}}" style="margin-right: 10rpx"></view>
                     <text style="white-space: nowrap">全选</text>
                 </view>
-                <view class="flex-grow-1" style="color:#ff4544;white-space: nowrap">
-                    总计:￥{{total_price}}
+                <view class="flex-grow-1" style="color:#ff4544;white-space: nowrap;text-align: right;font-size:15px;">
+                    <text style="color:black">总计:</text> ￥{{total_price}}
                 </view>
             </view>
             <block wx:if="{{show_cart_edit}}">
-                <view bindtap="cartDone" class="flex-y-center flex-grow-0 flex-x-center edit-btn">完成</view>
-                <view bindtap="cartDelete" class="flex-y-center flex-grow-0 flex-x-center submit-btn">删除</view>
+                <!-- <view bindtap="cartDone" class="flex-y-center flex-grow-0 flex-x-center edit-btn">完成</view> -->
+                <view bindtap="cartDelete" class="flex-y-center flex-grow-0 flex-x-center submit-btn del-btn">删除</view>
             </block>
             <block wx:else>
-                <view bindtap="cartEdit" class="flex-y-center flex-grow-0 flex-x-center edit-btn">编辑</view>
-                <view bindtap="cartSubmit" class="flex-y-center flex-grow-0 flex-x-center submit-btn">结算</view>
+                <!-- <view bindtap="cartEdit" class="flex-y-center flex-grow-0 flex-x-center edit-btn">编辑</view> -->
+                <view bindtap="cartSubmit" class="flex-y-center flex-grow-0 flex-x-center submit-btn ok-btn">结算</view>
             </block>
         </view>
         <view class="no-data-tip" wx:if="{{!cart_list.length&&!mch_list.length&&!loading}}">
@@ -27,19 +27,27 @@
             </view>
             <view>购物车还是空的哦</view>
         </view>
-        <block wx:else>
-            <block wx:if="{{cart_list&&cart_list.length}}">
+        <block wx:if="{{cart_list&&cart_list.length}}">
+            <block>
                 <view class="flex flex-row mch-header">
-                    <view bindtap="checkGroup" class="flex-grow-0 flex-y-center" data-index="0" data-type="self" style="padding: 24rpx">
+                    <view bindtap="checkGroup" class="flex-grow-0 flex-y-center" data-index="0" data-type="self" style="padding:20px 10px 20px 25px">
                         <view class="cart-checkbox {{check_all_self?'active':''}}"></view>
                     </view>
                     <view class="flex-grow-1 flex-y-center">{{shop_name}}</view>
+                    <!-- 把编辑和完成改了位置 -->
+                    <block wx:if="{{show_cart_edit}}">
+                       <view bindtap="cartDone" class="flex-y-center flex-grow-0 flex-x-center edit-btn" style="margin-right:20px;font-size:14px;">完成</view>
+                    </block>
+                    <block wx:else>
+                       <view bindtap="cartEdit" class="flex-y-center flex-grow-0 flex-x-center edit-btn" style="margin-right:20px;font-size:14px;">编辑</view>
+                    </block>
                 </view>
                 <view class="cart-list">
                     <view class="cart-item flex-row" wx:for="{{cart_list}}" wx:key="{{item.id}}">
                         <view class="flex-grow-0 flex-y-center" style="padding: 24rpx" wx:if="{{item.disabled&&!show_cart_edit}}">
                             <view style="width: 40rpx"></view>
                         </view>
+                        <!-- cart-checkbox和active的css中添加了选择的图片 -->
                         <view bindtap="cartCheck" class="flex-grow-0 flex-y-center" data-index="{{index}}" data-mch-index="0" data-type="self" style="padding: 24rpx" wx:else>
                             <view class="cart-checkbox {{item.checked?'active':''}}"></view>
                         </view>
@@ -64,7 +72,7 @@
                                     <view class="flex-grow-0 flex-row">
                                         <view class="flex-grow-1 price">￥{{item.unitPrice}}</view>
                                         <view>
-                                            <view class="flex-row">
+                                            <view class="flex-row" style="border:1px solid #ccc">
                                                 <image bindtap="cartLess" class="image1" id="{{item.cart_id}}" src="{{__wxapp_img.cart.less.url}}" wx:if="{{item.num>1}}"></image>
                                                 <image class="image1" src="{{__wxapp_img.cart.no_less.url}}" wx:else></image>
                                                 <view class="row-data">{{item.num}}</view>

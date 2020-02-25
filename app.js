@@ -41,7 +41,8 @@ var modules = [ {
 }, {
     name: "orderPay",
     file: "./core/order-pay.js"
-} ], args = {
+} ], 
+args = {
     _version: "2.8.9",
     platform: platform,
     query: null,
@@ -56,9 +57,9 @@ var modules = [ {
     is_form_id_request: !0
 };
 
-for (var i in modules) args[modules[i].name] = require("" + modules[i].file);
-
-var _web_root = args.api.index.substr(0, args.api.index.indexOf("/index.php"));
+for (var i in modules) args[modules[i].name] = require("" + modules[i].file);//把modules的方法全部引入
+console.log(args)
+var _web_root = args.api.index.substr(0, args.api.index.indexOf("/index.php"));//https://dgapp.dchycrm.com/web
 
 args.webRoot = _web_root, args.getauth = function(t) {
     var s = this;

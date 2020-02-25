@@ -1,3 +1,4 @@
+//域名
 var siteinfo = require("../siteinfo.js"), _api_root = "";
 
 if (-1 != siteinfo.acid) {

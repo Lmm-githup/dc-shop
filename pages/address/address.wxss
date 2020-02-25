@@ -1,17 +1,21 @@
 .bottom-bar {
     position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    bottom: 30rpx;
+    left: 2.5%;
+    width: 95%;
     z-index: 1000;
+    margin: 0 auto;
 }
 
 .bottom-bar navigator {
-    background: #ff4544;
+    /* background: #ff4544; */
     text-align: center;
-    height: 100rpx;
-    line-height: 100rpx;
+    height: 80rpx;
+    line-height: 80rpx;
     color: #fff;
+    background-color: #fa8455;
+    background-image: linear-gradient(to bottom right, #fa8455, #fc4658);
+    border-radius:20px;
 }
 
 .address-list {

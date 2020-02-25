@@ -17,7 +17,7 @@
        <view class="code">
           <input bindinput="bindCode" placeholder="请输入验证码" value="{{code}}"></input>
        </view>
-      <button style="margin-top:30px;" type="primary" bindtap="savePhone">保存</button>
+      <button style="margin-top:30px;background-color: #fa8455 ;background-image: linear-gradient(to bottom right, #fa8455, #fc4658);border-radius:20px" type="primary" bindtap="savePhone">保存</button>
     </view>
     <include src="/components/footer/footer"></include>
 </view>

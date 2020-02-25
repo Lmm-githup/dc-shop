@@ -250,12 +250,12 @@ module.exports = {
             }
         });
     },
-    setNavigationBarColor: function() {
-        var e = getApp().core.getStorageSync(getApp().const.NAVIGATION_BAR_COLOR);
-        e && getApp().core.setNavigationBarColor(e), getApp().navigateBarColorCall = function(e) {
-            getApp().core.setNavigationBarColor(e.data);
-        };
-    },
+    // setNavigationBarColor: function() {
+    //     var e = getApp().core.getStorageSync(getApp().const.NAVIGATION_BAR_COLOR);
+    //     e && getApp().core.setNavigationBarColor(e), getApp().navigateBarColorCall = function(e) {
+    //         getApp().core.setNavigationBarColor(e.data);
+    //     };
+    // },
     navigatorClick: function(e, t) {
         var o = e.currentTarget.dataset.open_type;
         if ("redirect" == o) return !0;

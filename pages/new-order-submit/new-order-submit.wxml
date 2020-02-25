@@ -2,6 +2,7 @@
     <include src="/components/common/common"></include>
     <include src="/components/header/header"></include>
     <view class="body after-navber" wx:if="{{mch_list}}">
+        <!-- 头部地址、支付方式、配送方式 -->
         <view class="{{show_card?'no-scroll':''}} {{show_shop||show_coupon_picker||show_card?'hidden':''}}" style="padding-bottom: 129rpx;">
             <view class="block" wx:if="{{mch_offline}}">
                 <view bindtap="goToAddress" class="address-picker flex-row" hoverClass="none">
@@ -13,7 +14,7 @@
                         <view style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis">收货地址：{{address.province}}{{address.city}}{{address.district}}{{address.detail}}</view>
                     </view>
                     <view class="flex-grow-1" wx:else>
-                        <view style="color:#ff4544">请选择收货地址</view>
+                        <view style="color:#ff4544"><span class="add-adress">+</span>请选择收货地址</view>
                     </view>
                     <view class="flex-grow-0 flex-y-center">
                         <image src="{{__wxapp_img.store.jiantou_r.url}}" style="width: 12rpx; height: 22rpx;margin-left: 24rpx"></image>
@@ -226,6 +227,7 @@
             <!-- 赠品 -->
             
         </view>
+        <!-- 优惠券 -->
         <view class="coupon-picker" wx:if="{{show_coupon_picker}}">
             <scroll-view class="coupon-list" scrollY="true" style="height: 100%;padding-bottom:40px;">
                 <view style="color:red;font-size: 9pt;margin-bottom: 20rpx;line-height: 1.35">
@@ -270,6 +272,7 @@
                 </view>
             </scroll-view>
         </view>
+        <!-- 当前定位门店链表展示 -->
         <view class="coupon-picker" style="background-color:#f7f7f7;" wx:if="{{show_shop}}">
             <scroll-view class="coupon-list" scrollY="true" style="height: 100%;padding:0;">
                 <view class="shop-block flex-y-center">当前地址</view>
@@ -300,6 +303,7 @@
                 </view>
             </scroll-view>
         </view>
+        <!-- 支付方式 -->
         <view class="payment flex-x-center flex-y-center" wx:if="{{show_payment}}">
             <view class="payment-modal">
                 <view class="pay-modal">
@@ -323,11 +327,13 @@
                 </view>
             </view>
         </view>
+        <!-- 所选地区自营商品暂时无货 -->
         <cover-view class="bottom-bar flex-row" wx:if="{{is_area==1}}">
             <cover-view class="is_area">
                 <cover-view>所选地区自营商品暂时无货</cover-view>
             </cover-view>
         </cover-view>
+        <!-- 价钱和提交 -->
         <cover-view class="bottom-bar flex-row" wx:else>
             <cover-view class="flex-y-center flex-grow-1" style="padding: 0 24rpx">
                 <cover-view class="flex-grow-1 total-amount">

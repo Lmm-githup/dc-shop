@@ -5,60 +5,60 @@ var interval = 0,
 
 Page({
   data: {
-    x: getApp().core.getSystemInfoSync().windowWidth,
-    y: getApp().core.getSystemInfoSync().windowHeight,
+    x: getApp().core.getSystemInfoSync().windowWidth,//获取屏幕的宽度
+    y: getApp().core.getSystemInfoSync().windowHeight,//获取屏幕的高度
     left: 0,
-    show_notice: !1,
+    show_notice: !1,//一个公告（notice）
     animationData: {},
     play: -1,
     time: 0,
     buy: !1,
     opendate: !1,
-    longitude: null,
-    latitude: null,
+    longitude: null,//经度
+    latitude: null,//维度
     shop: {
       name: ''
     },
     isFocus: false,
-    isIpx: false,
+    isIpx: false,//如果是苹果X就是true
     userLoginName: '',
     userLoginPwd: '',
     is_delete: 0,
     account_login: 1,
   },
   onLoad: function(t) {
-    getApp().page.onLoad(this, t);
+    getApp().page.onLoad(this, t);//app.js的args.page.onload
     var that = this;
-    wx.getSystemInfo({
+    wx.getSystemInfo({//获取设备信息
       success: function (res) {
-        let model = res.model.substring(0, res.model.indexOf("X")) + "X";
-        if (model == 'iPhone X') {
+        let model = res.model.substring(0, res.model.indexOf("X")) + "X";//设备型号
+        if (model == 'iPhone X') {//如果设备是苹果x
           that.setData({
-            isIpx: true
+            isIpx: true//设置isipx为true
           })
         }
       }
     });
-    if (this.data.latitude) {
-      this.loadData(t);
-    } else {
-      var userInfo = getApp().getUser();
-      if (userInfo.binding){
-        this.dingwei(t);
+    if (this.data.latitude) {//如果data里面有维度 
+      this.loadData(t);//获取页面的整体信息
+    } else {//如果没有维度
+      var userInfo = getApp().getUser();//获取用户的信息
+      if (userInfo.binding){//如果存在用户的手机号
+        this.dingwei(t);//获取定位信息
       }
     }
   },
   dingwei: function (param) {
     let e = this;
-    getApp().core.getLocation({
-      success: function (t) {
+    getApp().core.getLocation({//wx.getLocation
+      success: function (t) {//定位信息
         e.setData({
           longitude: t.longitude,
           latitude: t.latitude
         });
       },
       complete: function () {
-        e.getNearby();
+        e.getNearby();//获取附近门店
       }
     });
   },
@@ -73,7 +73,7 @@ Page({
         longitude: e.data.longitude,
         latitude: e.data.latitude
       },
-      success: function(t) {
+      success: function(t) {//头部地址【切换】
         0 == t.code && e.setData({
           shop: t.data
         });
@@ -121,10 +121,10 @@ Page({
   },
   loadData: function(t) {
     var a = this,
-      e = getApp().core.getStorageSync(getApp().const.PAGE_INDEX_INDEX);
-    e && (e.act_modal_list = [], a.setData(e)), getApp().request({
+      e = getApp().core.getStorageSync(getApp().const.PAGE_INDEX_INDEX);//获取
+      e && (e.act_modal_list = [], a.setData(e)), getApp().request({
       url: getApp().api.default.index,
-      success: function(t) {
+      success: function(t) {//首页的各个位置的信息
         0 == t.code && (page_first_init ? a.data.user_info_show || (page_first_init = !1) : t.data.act_modal_list = [],
           a.setData(t.data), getApp().core.setStorageSync(getApp().const.PAGE_INDEX_INDEX, t.data),
           a.miaoshaTimer());
@@ -132,6 +132,7 @@ Page({
           if(t.data.is_delete == 1){
             a.setData({ user_info_show: true });
           }
+
       },
       complete: function() {
         getApp().core.stopPullDownRefresh();
@@ -142,6 +143,7 @@ Page({
     var e = this;
     getApp().page.onShow(this), getApp().getConfig(function(t) {
       var a = t.store;
+      // console.log(a.name)首页标题的名字
       a && a.name && getApp().core.setNavigationBarTitle({//首页商城title
         title: a.name
       }), a && 1 === a.purchase_frame ? e.suspension(e.data.time) : e.setData({
@@ -392,4 +394,10 @@ Page({
       user_info_show: !1
     });
   },
+  // 点击首页定位会员码按钮图标
+  dingweiQucode:function(){
+    getApp().core.navigateTo({
+      url: "/pages/qrcode/index"
+    });
+  }
 });

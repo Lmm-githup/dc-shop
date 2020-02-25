@@ -2,9 +2,10 @@
     <include src="/components/common/common"></include>
     <include src="/components/header/header"></include>
     <view class="body after-navber">
-        <view class="flex-y-center flex-x-center" style="height: 100rpx;border-bottom: 1rpx solid #e3e3e3;border-top: 1rpx solid #e3e3e3;position: fixed;top: 0;width: 100%;z-index: 999;background: #EFEFF4">
-            <navigator class="flex-y-center flex-x-center fs-sm" style="width: 700rpx;height: 60rpx;background: #fff;border: 1rpx solid #e3e3e3; border-radius: 10rpx;text-align: center;color: #b2b2b2" url="/pages/search/search">
-                <image src="{{__wxapp_img.search.search.url}}" style="width:24rpx;height: 24rpx;margin-right:10rpx "></image>
+        <view class="flex-y-center flex-x-center" style="height: 100rpx;border-bottom: 1rpx solid #e3e3e3;border-top: 1rpx solid #e3e3e3;position: fixed;top: 0;width: 100%;z-index: 999;">
+            <navigator class="flex-y-center flex-x-center fs-sm" style="width: 700rpx;height: 60rpx;background: #ededf5;border-radius: 40rpx;text-align: center;color: #b2b2b2" url="/pages/search/search">
+             <!-- {{__wxapp_img.search.search.url}} -->
+             <image src="../../images/icon-search.png" style="width:24rpx;height: 24rpx;margin-right:10rpx "></image>
                 <text>搜索</text>
             </navigator>
         </view>

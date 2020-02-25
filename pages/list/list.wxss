@@ -13,7 +13,8 @@
     overflow: hidden;
     background: #fff;
     z-index: 10;
-    border-top: 1rpx solid #E3E3E3;
+    font-size: 15px;
+    /* border-top: 1rpx solid #E3E3E3; */
 }
 
 .cat-list {
@@ -83,6 +84,8 @@
 
 .top-bar~.goods-list {
     padding-top: 106rpx;
+    width: 97%;
+    margin: 0 auto;
 }
 
 .top-bar.height-bar~.goods-list {
@@ -90,12 +93,13 @@
 }
 
 .goods-item {
-    width: 365rpx;
+    width: 48%;
     display: inline-block;
     position: relative;
-    margin: 0 5rpx;
+    margin: 8rpx 1%;
     margin-bottom: 10rpx;
     background: #fff;
+    border-radius: 20rpx;
 }
 
 .goods-item .goods-pic {

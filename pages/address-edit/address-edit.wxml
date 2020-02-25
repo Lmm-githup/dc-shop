@@ -3,19 +3,19 @@
     <include src="/components/header/header"></include>
     <view class="body after-navber">
         <view class="bottom-bar">
-            <view bindtap="saveAddress">保存</view>
+            <view bindtap="saveAddress">保 存</view>
         </view>
         <view>
             <view class="flex-row flex-y-center edit-row">
                 <view class="flex-grow-0 row-label">收货人</view>
                 <view class="flex-grow-1">
-                    <input bindinput="inputBlur" data-name="name" placeholder="" value="{{name}}"></input>
+                    <input bindinput="inputBlur" data-name="name" placeholder="请填写收货人" value="{{name}}"></input>
                 </view>
             </view>
             <view class="flex-row flex-y-center edit-row">
                 <view class="flex-grow-0 row-label">联系电话</view>
                 <view class="flex-grow-1">
-                    <input bindinput="inputBlur" data-name="mobile" placeholder="" type="number" value="{{mobile}}"></input>
+                    <input bindinput="inputBlur" data-name="mobile" placeholder="请填写正确的联系电话" type="number" value="{{mobile}}"></input>
                 </view>
             </view>
             <view class="flex-row flex-y-center edit-row">
@@ -33,7 +33,7 @@
             <view class="flex-row flex-y-center edit-row">
                 <view class="flex-grow-0 row-label">详细地址</view>
                 <view class="flex-grow-1">
-                    <input bindinput="inputBlur" data-name="detail" placeholder="" value="{{detail}}"></input>
+                    <input bindinput="inputBlur" data-name="detail" placeholder="如街道、门牌号、小区、单元室等" value="{{detail}}"></input>
                 </view>
             </view>
             <!--<view bindtap="getWechatAddress" class="get-wechat-address" wx:if="{{__platform=='wx'}}">授权一键获取地址</view>-->

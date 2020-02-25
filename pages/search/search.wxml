@@ -1,4 +1,4 @@
-<view class="page" style="height:100%;">
+<view class="page" style="height:100%;background:#fff;">
     <include src="/components/common/common"></include>
     <include src="/components/header/header"></include>
     <view class="body after-navber" style="height:100%;">
@@ -17,7 +17,7 @@
                                 </view>
                             </view>-->
                             <view style="width: 100%">
-                                <input autoFocus="true" bindblur="inputBlur" bindconfirm="inputConfirm" bindfocus="inputFocus" class="search-input" confirmType="search" style="width: 100%;padding-left:2%;"></input>
+                                <input autoFocus="true" placeholder="请在此处搜索" bindblur="inputBlur" bindconfirm="inputConfirm" bindfocus="inputFocus" class="search-input" confirmType="search" style="width: 100%;padding-left:2%;"></input>
                             </view>
                         </view>
                         <view>

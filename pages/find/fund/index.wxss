@@ -25,8 +25,11 @@
 
 .search-button{
   width:300px;
-  background-color:rgb(30,71,156);
+  /* background-color:rgb(30,71,156); */
   color:#fff;
+  background-color: #fa8455;
+  background-image: linear-gradient(to bottom right, #fa8455, #fc4658);
+  border-radius:20px;
 }
 
 .image-div image{

@@ -4,16 +4,24 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
+		"coverView": true,
 		"autoAudits": false,
-		"checkInvalidKey": true
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.7.1",
+	"libVersion": "2.10.1",
 	"appid": "wx9ac6a4ae3519cff4",
 	"projectname": "kbjapplet-test",
 	"debugOptions": {
@@ -44,7 +52,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": -1,
 			"list": [
 				{
 					"id": -1,
@@ -113,6 +121,231 @@
 					"id": -1,
 					"name": "pages/shop/shop",
 					"pathName": "pages/shop/shop",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/goods/goods",
+					"pathName": "pages/goods/goods",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/new-order-submit/new-order-submit",
+					"pathName": "pages/new-order-submit/new-order-submit",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/address-picker/address-picker",
+					"pathName": "pages/address-picker/address-picker",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/address-edit/address-edit",
+					"pathName": "pages/address-edit/address-edit",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/binding/index",
+					"pathName": "pages/binding/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/user-info/index",
+					"pathName": "pages/user-info/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/update-phone/index",
+					"pathName": "pages/update-phone/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/update-phone/index修改手机号",
+					"pathName": "pages/update-phone/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 18,
+					"name": "pages/search/search搜索",
+					"pathName": "pages/search/search",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 19,
+					"name": "pages/find/product/index导航找药",
+					"pathName": "pages/find/product/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 20,
+					"name": "pages/find/list/index药品搜索",
+					"pathName": "pages/find/list/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 21,
+					"name": "pages/find/detail/index搜索",
+					"pathName": "pages/find/detail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 22,
+					"name": "pages/find/store/index有货门店",
+					"pathName": "pages/find/store/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 23,
+					"name": "pages/find/intro/index商品详情",
+					"pathName": "pages/find/intro/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 24,
+					"name": "pages/find/fund/index我的找药",
+					"pathName": "pages/find/fund/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 25,
+					"name": "pages/find/fund-detail/index我的找药需求",
+					"pathName": "pages/find/fund-detail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 26,
+					"name": "pages/find/submit-fund/index找药申请",
+					"pathName": "pages/find/submit-fund/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 27,
+					"name": "pages/shoplist/shop附近",
+					"pathName": "pages/shoplist/shop",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 28,
+					"name": "pages/qrcode/index会员码",
+					"pathName": "pages/qrcode/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 29,
+					"name": "pages/order-submit/order-submit结算",
+					"pathName": "pages/order-submit/order-submit",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 30,
+					"name": "pages/order/order订单链表",
+					"pathName": "pages/order/order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 31,
+					"name": "pages/promotion/list无数据",
+					"pathName": "pages/promotion/list",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 32,
+					"name": "pages/order-detail/order-detail订单详情",
+					"pathName": "pages/order-detail/order-detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 33,
+					"name": "pages/address/address收货地址",
+					"pathName": "pages/address/address",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 34,
+					"name": "pages/address-edit/address-edit编辑地址",
+					"pathName": "pages/address-edit/address-edit",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 35,
+					"name": "pages/address-picker/address-picker选择收获地址",
+					"pathName": "pages/address-picker/address-picker",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 36,
+					"name": "pages/test/test测试假页面",
+					"pathName": "pages/test/test",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 37,
+					"name": "pages/favorite/favorite我的收藏",
+					"pathName": "pages/favorite/favorite",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 38,
+					"name": "pages/order-refund/order-refund退货退款",
+					"pathName": "pages/order-refund/order-refund",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 39,
+					"name": "pages/order-refund-detail/order-refund-detail售后单详情",
+					"pathName": "pages/order-refund-detail/order-refund-detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 40,
+					"name": "pages/add-share/index申请成为分销商",
+					"pathName": "pages/add-share/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 41,
+					"name": "pages/share/index分销中心",
+					"pathName": "pages/share/index",
+					"query": "",
 					"scene": null
 				}
 			]

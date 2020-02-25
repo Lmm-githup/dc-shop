@@ -21,6 +21,7 @@
     border-radius: 0;
     height: 100%;
     font-size:14px;
+    background-image: linear-gradient(to bottom right, #fb8575 , #fc4658);
 }
 
 .address-picker {
@@ -368,8 +369,8 @@
 }
 
 .block {
-    border-top: 1rpx solid #e3e3e3;
-    margin-bottom: 20rpx;
+    /* border-top: 1rpx solid #e3e3e3; */
+    margin: 20rpx 0;
     background: #fff;
 }
 
@@ -393,4 +394,16 @@
   font-size:18px;
   font-weight:bold;
   color: #ff4544;
+}
+.add-adress{
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 10rpx;
+    background: #84c3fd;
+    color: #fff;
+    display: inline-block;
+    text-align: center;
+    line-height: 36rpx;
+    margin-right: 20rpx;
+    font-size: 30rpx;  
 }

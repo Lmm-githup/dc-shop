@@ -42,8 +42,12 @@
 
 .cart-item {
     background: #fff;
-    border-bottom: 1rpx solid #e3e3e3;
+    /* border-bottom: 1rpx solid #e3e3e3; */
     padding: 24rpx 24rpx 12rpx 0;
+    width: 92%;
+    margin: 0 auto;
+    margin-bottom:20rpx;
+    border-radius: 15rpx;
 }
 
 .cart-item .goods-pic {
@@ -76,6 +80,7 @@
 
 .cart-item .price {
     color: #ff4544;
+    line-height:50rpx;
 }
 
 .cart-item .cart-tag {
@@ -100,17 +105,35 @@
 
 .row-data {
     height: 50rpx;
-    margin: 0 4rpx;
+    /* margin: 0 4rpx; */
     padding-top: 8rpx;
     width: 88rpx;
     text-align: center;
     background: #f7f7f7;
     font-size: 9pt;
     color: #353535;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
 }
 
 .mch-header {
-    background: #fff;
+    /* background: #fff;
     border-top: 1rpx solid #e3e3e3;
-    border-bottom: 1rpx solid #e3e3e3;
+    border-bottom: 1rpx solid #e3e3e3; */
+}
+.del-btn,.ok-btn{
+    border:1px solid #ff4544 !important;
+    border-radius: 50rpx !important;
+    width:150rpx !important;
+    height: 64rpx !important;
+    margin-right: 10px !important;
+    margin-top:13rpx !important;
+}
+.del-btn{
+    background: #fff !important;
+    color: #ff4544 !important;
+}
+.ok-btn{
+    background: #ff4544 !important;
+    color: #fff !important;
 }

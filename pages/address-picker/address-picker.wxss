@@ -7,11 +7,13 @@
 }
 
 .bottom-bar navigator {
-    background: #ff4544;
+    /* background: #ff4544; */
     text-align: center;
     height: 100rpx;
     line-height: 100rpx;
     color: #fff;
+    background-color: #fa8455;
+    background-image: linear-gradient(to bottom right, #fa8455, #fc4658);
 }
 
 .address-list {
@@ -71,4 +73,6 @@
     background: #ff4544;
     color: #fff;
     border-color: #ff4544;
+    border-radius: 40rpx;
+    background-image: linear-gradient(to bottom right, #fb8575 , #fc4658);
 }
