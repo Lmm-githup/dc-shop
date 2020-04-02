@@ -5,7 +5,8 @@
     <view class="body after-navber">
        <template is="dingwei" data="{{shop}}"></template>
         <template is="buy-data" data="{{buy:buy}}"></template>
-        <block wx:for="{{module_list}}" wx:ksey="{{item.id}}">
+        <block wx:for="{{module_list}}" wx:key="{{item.id}}">
+            <!-- <view>{{item.name}}</view> -->
             <template is="notice" data="{{notice:notice,update_list:update_list,__wxapp_img:__wxapp_img,show_notice:show_notice,item:item}}" wx:if="{{item.name=='notice'}}"></template>
             <template is="banner" data="{{banner_list:banner_list,item:item}}" wx:elif="{{item.name=='banner'}}"></template>
             <template is="location" data="{{location_list:location_list,item:item}}" wx:elif="{{item.name=='location'}}"></template>

@@ -20,7 +20,7 @@ form {
 
 .search-button{
   width:300px;
-  background-color:rgb(30,71,156);
+  background-color:#fd6758;
   color:#fff;
 }
 

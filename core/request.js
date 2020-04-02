@@ -1,22 +1,34 @@
 module.exports = function(a) {
     a.data || (a.data = {});
-    var o = this.core, e = this.core.getStorageSync(this.const.ACCESS_TOKEN), t = this.core.getStorageSync(this.const.FORM_ID_LIST);
-    e && (a.data.access_token = e), a.data._version = this._version, a.data._platform = this.platform, 
-    !this.is_login && this.page.currentPage && (this.is_login = !0, this.login({}));
+    // 获取core
+    var o = this.core, 
+    // 获取access_token
+    e = this.core.getStorageSync(this.const.ACCESS_TOKEN), 
+    // 获取form_id_list
+    t = this.core.getStorageSync(this.const.FORM_ID_LIST);
+    // 把a.data存入access_token
+    e && (a.data.access_token = e), 
+    // 把a.data存入_version版本
+    a.data._version = this._version, 
+    // 把a.data存入platform
+    a.data._platform = this.platform;
+    // 如果this.is_login=flase且currentPage存在就设置this.is_login为true,并且执行this.login()
+    !this.is_login && this.page.currentPage && (this.is_login = !0,this.login({}));//这个请求了是否登陆过的接口
     var s = this;
     t && 1 <= t.length && s.is_form_id_request && (s.is_form_id_request = !1, s.request({
         url: s.api.default.form_id,
         method: "POST",
         data: {
             formIdList: JSON.stringify(t)
-        },
+        },                     
         success: function(e) {
             s.core.removeStorageSync(s.const.FORM_ID_LIST);
         },
         complete: function() {
             s.is_form_id_request = !0;
         }
-    })), o.request({
+    })),
+     o.request({
         url: a.url,
         header: a.header || {
             "content-type": "application/x-www-form-urlencoded"
@@ -25,6 +37,7 @@ module.exports = function(a) {
         method: a.method || "GET",
         dataType: a.dataType || "json",
         success: function(e) {
+            // 如果请求接口的code==-1的话setUserInfoShow(user-info-show=true)是显示去登陆的页面is_login=false
             -1 == e.data.code ? (s.core.hideLoading(), s.page.setUserInfoShow(), s.is_login = !1) : -2 == e.data.code ? o.redirectTo({
                 url: "/pages/store-disabled/store-disabled"
             }) : a.success && a.success(e.data);

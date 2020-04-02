@@ -1,12 +1,13 @@
 @import "../../components/quick-navigation/quick-navigation.wxss";
 
-.banner {
-    height: 360rpx;
+.banner { 
+    height: 348rpx;
     width: 93%;
     background: #fff;
     border-radius: 20rpx;
     box-shadow: 0px 5px 10px #de9595;
     margin:15rpx auto;
+    overflow: hidden;
 }
 
 .float-icon {
@@ -21,7 +22,8 @@
 
 .banner .slide-image {
     width: 100%;
-    height: 360rpx;
+    height: 348rpx;
+    border-radius: 20rpx;
 }
 
 .banner .slide-title {
@@ -87,7 +89,7 @@
 }
 
 .search-block {
-    padding: 17rpx 24rpx;
+    padding: 2rpx 30rpx 24rpx 24rpx;
     display: block;
 }
 
@@ -198,6 +200,8 @@
     border-bottom: 1rpx solid #eee;
     height: 100rpx;
     background: #fff;
+    /* 若让标题在中间注释下一行代码 */
+    justify-content: left;
 }
 
 .title-bar image {
@@ -329,21 +333,22 @@
     box-sizing: border-box;
     /* width: 100%; */
     /* border-bottom: 1px solid #ededed; */
-    padding: 20rpx 24rpx;
-    width:46%;
+    padding: 20rpx 12rpx;
+    width:31.6%;
     position:relative;
-    margin:2% 2%;
+    margin:2% 0.8%;
     background: #fff;
     border-radius: 10rpx;
 }
 
 .product_logo {
-    /* width: 200rpx;
-    height: 200rpx; */
+    width: 200rpx;
+    height: 200rpx;
     position: relative;
-    /* padding: 15px; */
-    width: 270rpx;
-    height: 270rpx;
+}
+.product_logo image{
+    border: 1rpx solid #ccc;
+    border-radius: 10rpx;
 }
 
 .new_price {
@@ -505,7 +510,8 @@
 }
 
 .user-block {
-    margin: 10rpx 0;
+    padding: 5rpx 10px;
+    background: #fff;
 }
 
 .nav-icon-1 {
@@ -551,12 +557,13 @@
     overflow: hidden;
     white-space: nowrap;
     word-break: break-all;
-    line-height: 72rpx;
+    line-height: 74rpx;
+    text-align: center;
 }
 
 .notice-content {
     z-index: 5;
-    animation: 20s 0s run infinite linear;
+    animation: 5s 0s run infinite linear;
     transform: translateX(0%);
     display: inline-block;
 }
@@ -635,10 +642,14 @@
 }
 
 .miaosha-goods-list navigator {
-    width: 224rpx;
+    width: 300rpx;
     overflow: hidden;
     background: #fff;
     padding: 0 8rpx 16rpx 8rpx;
+    margin: 10rpx 15rpx;
+    border-radius: 10px;
+    box-shadow: #dfe1e7 0 0 15px;
+
 }
 
 .miaosha-goods image {
@@ -651,7 +662,6 @@
 .miaosha-goods .text-more-2 {
     height: 2.8em;
     line-height: 1.4;
-    margin-bottom: 18rpx;
 }
 
 .pintuan-goods-list>navigator {
@@ -731,7 +741,7 @@
     background: #000;
     border-radius: 30rpx;
     opacity: 0.8;
-    ppointer-events: none;
+    pointer-events: none;
 }
 
 .purchase2 {
@@ -850,9 +860,8 @@
 }
 
 .location-header{
-   /* background-color:#fff; */
    background: #fd6758;
-   /* border-bottom:1px solid #f0f0f0; */
+   background-image: linear-gradient(90deg, #fc7155, #fd4358); 
    line-height:40px;
    padding:0px 10px;
    font-size:14px;
@@ -868,9 +877,8 @@
 }
 
 .search-header{
-   /* background-color:#fff; */
    background-color: #fd6758;
-   /* background-image: linear-gradient( #fd6758, #fbc6c1); */
+   background-image: linear-gradient(90deg, #fc7155, #fd4358); 
 }
 
 /* 附近门店 */
@@ -1000,7 +1008,7 @@
   background-color: #fff;
   overflow: hidden;
   position: relative;
-  z-index: 1;
+  /* z-index: 1; */
   margin-top: -4rpx;
 }
 .position-red{
@@ -1009,3 +1017,32 @@
   top: 0;
   z-index: -1;
 }
+
+/* block某些id是xx的时候 */
+.health-block-name,.make-block-name{
+    width: 100%;
+    line-height: 80rpx;
+    background: #fff;
+    padding: 0 20rpx;
+    font-weight: bold;
+    font-size: 15px;
+}
+.miaosha_imgbox{
+  border: 4rpx solid #f74a56;
+  border-radius:10px 10px 0 0;
+  position: relative;
+}
+.miaosha_small{
+  position: absolute;
+  left: 0;
+  width:85rpx;
+  height: 36rpx;
+  font-size: 20rpx;
+  text-align: center;
+  color: #fff;
+  font-style: italic
+}
+.miaosha_small i{position: absolute;left: 26rpx;top:2rpx}
+.miaosha_small image{width:100%;height: 100%}
+.poster{width: 90%;margin: 0 auto; margin-top:40rpx}
+.poster image{width: 100%;border-radius: 5px}

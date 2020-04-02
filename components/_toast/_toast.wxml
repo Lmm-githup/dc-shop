@@ -8,6 +8,7 @@
         <image src="{{__wxapp_img.system.loading2.url}}"></image>
     </view>
 </view>
+<!-- 这里的user_info_show根据后台code是否是-1 0的话就不显示，-1的话就是显示-->
 <view class="new-modal" wx:if="{{user_info_show}}">
     <view class="new-modal-content">
         <view class="new-modal-header" style="padding:80px 30rpx 0;line-height:80rpx;"></view>
@@ -18,7 +19,7 @@
             </view>
             <view class="flex-x-center">
                 <view>
-                    <button bindgetuserinfo="getUserInfo" bindtap="myLogin" class="btn new-modal-btn" openType="getUserInfo" style="background-color:rgb(30,71,156);width:560rpx;height:70rpx;border-radius:20rpx;color:#fff;margin-bottom:40rpx;line-height:35px;font-size:16px;">授权登录</button>
+                    <button bindgetuserinfo="getUserInfo" bindtap="myLogin" class="btn new-modal-btn" openType="getUserInfo" style="background-color:#fd6758;width:560rpx;height:70rpx;border-radius:20rpx;color:#fff;margin-bottom:40rpx;line-height:35px;font-size:16px;">授权登录</button>
                 </view>
             </view>
         </view>

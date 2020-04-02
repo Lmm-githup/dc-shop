@@ -20,7 +20,6 @@ Page({
         });
     },
     myLogin: function() {
-      console.log("111")
         var t = this;
         "my" === getApp().platform && my.getAuthCode({
             scopes: "auth_user",

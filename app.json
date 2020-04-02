@@ -7,7 +7,7 @@
     "pages/user/user",
     "pages/binding/index",
     "pages/user-info/index",
-    "pages/update-phone/index",
+    "pages/update-phone/index", 
     "pages/search/search",
     "pages/find/product/index",
     "pages/find/list/index",
@@ -191,7 +191,6 @@
       ]
     }
   ],
-  
   "debug": false,
   "sitemapLocation": "sitemap.json"
 }

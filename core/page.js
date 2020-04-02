@@ -2,11 +2,12 @@ module.exports = {
     currentPage: null,
     currentPageOptions: {},
     navbarPages: [ "pages/index/index", "pages/cat/cat", "pages/cart/cart", "pages/user/user", "pages/list/list", "pages/search/search", "pages/topic-list/topic-list", "pages/video/video-list", "pages/miaosha/miaosha", "pages/shop/shop", "pages/pt/index/index", "pages/book/index/index", "pages/share/index", "pages/quick-purchase/index/index", "mch/m/myshop/myshop", "mch/shop-list/shop-list", "pages/integral-mall/index/index", "pages/integral-mall/register/index", "pages/article-detail/article-detail", "pages/article-list/article-list", "pages/order/order" ],
-    onLoad: function(t, e) {
+    onLoad: function(t, e) {//t代表this，e代表传来的参数
         this.currentPage = t, this.currentPageOptions = e;
         var o = this;
         if (this.setUserInfo(), this.setWxappImg(), this.setStore(), this.setParentId(e), 
-        this.getNavigationBarColor(), this.setDeviceInfo(), this.setPageClasses(), this.setPageNavbar(), 
+        this.getNavigationBarColor(), //请求头部导航背景颜色
+        this.setDeviceInfo(), this.setPageClasses(), this.setPageNavbar(), //请求底部导航
         this.setBarTitle(), "function" == typeof t.onSelfLoad && t.onSelfLoad(e), o._setFormIdSubmit(), 
         "undefined" != typeof my && "pages/login/login" != t.route && e && (t.options || (t.options = e), 
         getApp().core.setStorageSync("last_page_options", e)), "lottery/goods/goods" == t.route && e.user_id) {
@@ -16,7 +17,7 @@ module.exports = {
                     user_id: n,
                     lottery_id: a
                 },
-                url: getApp().api.lottery.clerk,
+                url: getApp().api.lottery.clerk,//"https://dgapp.dchycrm.com/web/index.php?store_id=1&r=api/lottery/default/clerk"
                 success: function(e) {
                     e.code;
                 }
@@ -197,7 +198,7 @@ module.exports = {
             });
         }
         o && getApp().request({
-            url: getApp().api.default.navbar,
+            url: getApp().api.default.navbar,//请求底部导航
             success: function(e) {
                 0 == e.code && (a(e.data), getApp().core.setStorageSync("_navbar", e.data), t.setPageClasses());
             }
@@ -246,7 +247,8 @@ module.exports = {
             url: t.api.default.navigation_bar_color,
             success: function(e) {
                 0 == e.code && (t.core.setStorageSync(getApp().const.NAVIGATION_BAR_COLOR, e.data), 
-                o.setNavigationBarColor(), t.navigateBarColorCall && "function" == typeof t.navigateBarColorCall && t.navigateBarColorCall(e));
+                // o.setNavigationBarColor(), 
+                t.navigateBarColorCall && "function" == typeof t.navigateBarColorCall && t.navigateBarColorCall(e));
             }
         });
     },
@@ -422,7 +424,6 @@ module.exports = {
                       account_login: e.data.account_login || 0
                     })
                   }
-                    
                 } else getApp().login_complete = !1, getApp().core.showModal({
                     title: "提示",
                     content: e.msg,

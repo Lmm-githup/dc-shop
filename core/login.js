@@ -2,9 +2,9 @@ module.exports = function(e) {
     var t = this, r = t.page.currentPage;
     t.page.currentPageOptions;
     r && "pages/index/index" === r.route && "my" === t.platform || this.request({
-        url: this.api.share.index,
+        url: this.api.share.index,//https://dgapp.dchycrm.com/web/index.php?store_id=1&r=api/share/index
         success: function(e) {
-            0 == e.code && (t.page.setPhone(), t.trigger.run(t.trigger.events.login));
+            0 == e.code && (t.page.setPhone(), t.trigger.run(t.trigger.events.login));//code等于0的时候就setPhone()user_bind_show=true
         }
     });
 };

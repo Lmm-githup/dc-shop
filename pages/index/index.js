@@ -125,14 +125,14 @@ Page({
       e && (e.act_modal_list = [], a.setData(e)), getApp().request({
       url: getApp().api.default.index,
       success: function(t) {//首页的各个位置的信息
+        // 如果page_first_init是true的话false:执行后续
         0 == t.code && (page_first_init ? a.data.user_info_show || (page_first_init = !1) : t.data.act_modal_list = [],
           a.setData(t.data), getApp().core.setStorageSync(getApp().const.PAGE_INDEX_INDEX, t.data),
           a.miaoshaTimer());
           a.setData({ isFocus: t.data.isFocus});
-          if(t.data.is_delete == 1){
-            a.setData({ user_info_show: true });
-          }
-
+          // if(t.data.is_delete == 1){//如果t.data.is_delete == 1为1的话登录页面就显示
+          //   a.setData({ user_info_show: true });
+          // }
       },
       complete: function() {
         getApp().core.stopPullDownRefresh();

@@ -21,7 +21,7 @@
 		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.10.1",
+	"libVersion": "2.10.3",
 	"appid": "wx9ac6a4ae3519cff4",
 	"projectname": "kbjapplet-test",
 	"debugOptions": {
@@ -69,107 +69,30 @@
 					"scene": 1089
 				},
 				{
-					"id": -1,
-					"name": "pages/cart/cart",
-					"pathName": "pages/cart/cart",
+					"id": 54,
+					"name": "lottery/lucky-code/lucky-code幸运码",
+					"pathName": "lottery/lucky-code/lucky-code",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "pages/goods/goods",
-					"pathName": "pages/goods/goods",
+					"id": 55,
+					"name": "lottery/goods/goods商品详情",
+					"pathName": "lottery/goods/goods",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "pages/list/list",
-					"pathName": "pages/list/list",
+					"id": 57,
+					"name": "bargain/list/list砍价",
+					"pathName": "bargain/list/list",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "pages/shoplist/shop",
-					"pathName": "pages/shoplist/shop",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/shop/shop",
-					"pathName": "pages/shop/shop",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "mch/m/myshop/myshop",
-					"pathName": "mch/m/myshop/myshop",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/index/index",
-					"pathName": "pages/index/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/shop/shop",
-					"pathName": "pages/shop/shop",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/goods/goods",
-					"pathName": "pages/goods/goods",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/new-order-submit/new-order-submit",
-					"pathName": "pages/new-order-submit/new-order-submit",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/address-picker/address-picker",
-					"pathName": "pages/address-picker/address-picker",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/address-edit/address-edit",
-					"pathName": "pages/address-edit/address-edit",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/binding/index",
-					"pathName": "pages/binding/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/user-info/index",
-					"pathName": "pages/user-info/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/update-phone/index",
-					"pathName": "pages/update-phone/index",
+					"id": 59,
+					"name": "pages/cat/cat分类",
+					"pathName": "pages/cat/cat",
 					"query": "",
 					"scene": null
 				},
@@ -181,170 +104,940 @@
 					"scene": null
 				},
 				{
-					"id": 18,
-					"name": "pages/search/search搜索",
-					"pathName": "pages/search/search",
+					"id": 58,
+					"name": "lottery/rule/rule规则",
+					"pathName": "lottery/rule/rule",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": 19,
-					"name": "pages/find/product/index导航找药",
-					"pathName": "pages/find/product/index",
+					"id": 59,
+					"name": "lottery/prize/prize中奖记录",
+					"pathName": "lottery/prize/prize",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": 20,
-					"name": "pages/find/list/index药品搜索",
-					"pathName": "pages/find/list/index",
+					"id": 60,
+					"name": "lottery/goods/goods抽奖商品详情",
+					"pathName": "lottery/goods/goods",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": 21,
-					"name": "pages/find/detail/index搜索",
-					"pathName": "pages/find/detail/index",
+					"id": 61,
+					"name": "lottery/detail/detail抽奖",
+					"pathName": "lottery/detail/detail",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": 22,
-					"name": "pages/find/store/index有货门店",
-					"pathName": "pages/find/store/index",
+					"id": 62,
+					"name": "lottery/index/index抽奖",
+					"pathName": "lottery/index/index",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": 23,
-					"name": "pages/find/intro/index商品详情",
-					"pathName": "pages/find/intro/index",
+					"id": 63,
+					"name": "scratch/rule/rule规则",
+					"pathName": "scratch/rule/rule",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": 24,
-					"name": "pages/find/fund/index我的找药",
-					"pathName": "pages/find/fund/index",
+					"id": 64,
+					"name": "scratch/prize/prize中奖记录",
+					"pathName": "scratch/prize/prize",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": 25,
-					"name": "pages/find/fund-detail/index我的找药需求",
-					"pathName": "pages/find/fund-detail/index",
+					"id": 65,
+					"name": "scratch/index/index抽奖",
+					"pathName": "scratch/index/index",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": 26,
-					"name": "pages/find/submit-fund/index找药申请",
-					"pathName": "pages/find/submit-fund/index",
+					"id": 66,
+					"name": "bargain/rule/rule规则",
+					"pathName": "bargain/rule/rule",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": 27,
-					"name": "pages/shoplist/shop附近",
-					"pathName": "pages/shoplist/shop",
+					"id": 67,
+					"name": "bargain/order-list/order-list我的砍价",
+					"pathName": "bargain/order-list/order-list",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": 28,
-					"name": "pages/qrcode/index会员码",
-					"pathName": "pages/qrcode/index",
+					"id": 68,
+					"name": "bargain/activity/activity砍价",
+					"pathName": "bargain/activity/activity",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": 29,
-					"name": "pages/order-submit/order-submit结算",
-					"pathName": "pages/order-submit/order-submit",
+					"id": 69,
+					"name": "bargain/list/list砍价",
+					"pathName": "bargain/list/list",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": 30,
-					"name": "pages/order/order订单链表",
-					"pathName": "pages/order/order",
+					"id": 70,
+					"name": "bargain/goods/goods商品详情（砍价）",
+					"pathName": "bargain/goods/goods",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": 31,
-					"name": "pages/promotion/list无数据",
-					"pathName": "pages/promotion/list",
+					"id": 71,
+					"name": "pond/rule/rule规则",
+					"pathName": "pond/rule/rule",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": 32,
-					"name": "pages/order-detail/order-detail订单详情",
-					"pathName": "pages/order-detail/order-detail",
+					"id": 72,
+					"name": "pond/prize/prize中奖记录",
+					"pathName": "pond/prize/prize",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": 33,
-					"name": "pages/address/address收货地址",
-					"pathName": "pages/address/address",
+					"id": 73,
+					"name": "pond/pond/pond抽奖",
+					"pathName": "pond/pond/pond",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": 34,
-					"name": "pages/address-edit/address-edit编辑地址",
-					"pathName": "pages/address-edit/address-edit",
+					"id": 74,
+					"name": "mch/shop-summary/shop-summary店铺简介",
+					"pathName": "mch/shop-summary/shop-summary",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": 35,
-					"name": "pages/address-picker/address-picker选择收获地址",
-					"pathName": "pages/address-picker/address-picker",
+					"id": 75,
+					"name": "mch/m/settle_detail/settle_detail结算详情",
+					"pathName": "mch/m/settle_detail/settle_detail",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": 36,
-					"name": "pages/test/test测试假页面",
-					"pathName": "pages/test/test",
+					"id": 76,
+					"name": "mch/m/cash/cash申请提现金额",
+					"pathName": "mch/m/cash/cash",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": 37,
-					"name": "pages/favorite/favorite我的收藏",
-					"pathName": "pages/favorite/favorite",
+					"id": 77,
+					"name": "mch/shop-cat/shop-cat店铺分类",
+					"pathName": "mch/shop-cat/shop-cat",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": 38,
-					"name": "pages/order-refund/order-refund退货退款",
-					"pathName": "pages/order-refund/order-refund",
+					"id": 78,
+					"name": "mch/shop-list/shop-list好店推荐",
+					"pathName": "mch/shop-list/shop-list",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": 39,
-					"name": "pages/order-refund-detail/order-refund-detail售后单详情",
-					"pathName": "pages/order-refund-detail/order-refund-detail",
+					"id": 79,
+					"name": "mch/shop/shop店铺首页",
+					"pathName": "mch/shop/shop",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": 40,
+					"id": 77,
+					"name": "mch/apply/apply申请入驻",
+					"pathName": "mch/apply/apply",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 78,
+					"name": "mch/m/order-refund/order-refund售后订单",
+					"pathName": "mch/m/order-refund/order-refund",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 79,
+					"name": "mch/m/tongji/tongji数据统计",
+					"pathName": "mch/m/tongji/tongji",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 80,
+					"name": "mch/m/cash-log/cash-log提现记录",
+					"pathName": "mch/m/cash-log/cash-log",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 81,
+					"name": "mch/m/account-log/account-log交易记录",
+					"pathName": "mch/m/account-log/account-log",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 82,
+					"name": "mch/m/account-rest/account-rest(示例页面)",
+					"pathName": "mch/m/account-rest/account-rest",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 83,
+					"name": "mch/m/account/account资产",
+					"pathName": "mch/m/account/account",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 84,
+					"name": "mch/m/shop-qrcode/shop-qrcode店铺二维码",
+					"pathName": "mch/m/shop-qrcode/shop-qrcode",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 85,
+					"name": "mch/m/order-send/order-send订单发货",
+					"pathName": "mch/m/order-send/order-send",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 86,
+					"name": "mch/m/order-detail/order-detail订单详情",
+					"pathName": "mch/m/order-detail/order-detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 87,
+					"name": "mch/m/order/order订单管理",
+					"pathName": "mch/m/order/order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 88,
+					"name": "mch/m/goods/goods商品管理",
+					"pathName": "mch/m/goods/goods",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 89,
+					"name": "mch/m/setting/setting店铺管理",
+					"pathName": "mch/m/setting/setting",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 90,
+					"name": "mch/m/myshop/myshop申请入驻",
+					"pathName": "mch/m/myshop/myshop",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 91,
+					"name": "pages/card-detail/card-detail优惠券记录",
+					"pathName": "pages/card-detail/card-detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 92,
+					"name": "pages/coupon-detail/coupon-detail优惠券详情",
+					"pathName": "pages/coupon-detail/coupon-detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 93,
+					"name": "pages/new-order-submit/new-order-submit结算",
+					"pathName": "pages/new-order-submit/new-order-submit",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 94,
+					"name": "pages/store-disabled/store-disabled商城",
+					"pathName": "pages/store-disabled/store-disabled",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 95,
+					"name": "pages/integral-mall/clerk/clerk订单详情",
+					"pathName": "pages/integral-mall/clerk/clerk",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 96,
+					"name": "pages/integral-mall/order/order订单列表",
+					"pathName": "pages/integral-mall/order/order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 97,
+					"name": "pages/integral-mall/order-submit/index确认订单",
+					"pathName": "pages/integral-mall/order-submit/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 98,
+					"name": "pages/integral-mall/goods-info/index商品详情",
+					"pathName": "pages/integral-mall/goods-info/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 99,
+					"name": "pages/integral-mall/coupon-info/index积分商城",
+					"pathName": "pages/integral-mall/coupon-info/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 100,
+					"name": "pages/integral-mall/register/index签到",
+					"pathName": "pages/integral-mall/register/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 101,
+					"name": "pages/integral-mall/exchange/index兑换",
+					"pathName": "pages/integral-mall/exchange/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 102,
+					"name": "pages/integral-mall/detail/index积分明细",
+					"pathName": "pages/integral-mall/detail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 103,
+					"name": "pages/integral-mall/shuoming/index积分说明",
+					"pathName": "pages/integral-mall/shuoming/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 104,
+					"name": "pages/integral-mall/index/index积分商城",
+					"pathName": "pages/integral-mall/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 105,
+					"name": "pages/login/login授权登录",
+					"pathName": "pages/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 106,
+					"name": "pages/balance/detail交易明细",
+					"pathName": "pages/balance/detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 107,
+					"name": "pages/web/authorization/authorization绑定公众号",
+					"pathName": "pages/web/authorization/authorization",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 108,
+					"name": "pages/bangding/bangding更换绑定手机号",
+					"pathName": "pages/bangding/bangding",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 109,
+					"name": "pages/recharge/recharge充值",
+					"pathName": "pages/recharge/recharge",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 110,
+					"name": "pages/balance/balance余额",
+					"pathName": "pages/balance/balance",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 111,
+					"name": "pages/quick-purchase/index/index快速购买",
+					"pathName": "pages/quick-purchase/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 112,
+					"name": "pages/fxhb/detail/detail拆红包",
+					"pathName": "pages/fxhb/detail/detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 113,
+					"name": "pages/fxhb/open/open拆红包",
+					"pathName": "pages/fxhb/open/open",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 114,
+					"name": "pages/book/comment/comment商品评价",
+					"pathName": "pages/book/comment/comment",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 115,
+					"name": "pages/book/order-comment/order-comment评价",
+					"pathName": "pages/book/order-comment/order-comment",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 116,
+					"name": "pages/book/clerk/clerk核销",
+					"pathName": "pages/book/clerk/clerk",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 117,
+					"name": "pages/book/shop/shop附近",
+					"pathName": "pages/book/shop/shop",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 118,
+					"name": "pages/book/order/details订单详情",
+					"pathName": "pages/book/order/details",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 119,
+					"name": "pages/book/order/order我的预约",
+					"pathName": "pages/book/order/order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 120,
+					"name": "pages/book/submit/submit提交预约",
+					"pathName": "pages/book/submit/submit",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 121,
+					"name": "pages/book/details/details预约",
+					"pathName": "pages/book/details/details",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 122,
+					"name": "pages/book/index/index预约",
+					"pathName": "pages/book/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 123,
+					"name": "pages/pt/search/search搜索",
+					"pathName": "pages/pt/search/search",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 124,
+					"name": "pages/pt/order-refund-detail/order-refund-detail售后单详情",
+					"pathName": "pages/pt/order-refund-detail/order-refund-detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 125,
+					"name": "pages/pt/order-refund/order-refund申请售后",
+					"pathName": "pages/pt/order-refund/order-refund",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 126,
+					"name": "pages/pt/clerk/clerk订单核销",
+					"pathName": "pages/pt/clerk/clerk",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 127,
+					"name": "pages/pt/comment/comment商品评价",
+					"pathName": "pages/pt/comment/comment",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 128,
+					"name": "pages/pt/order-comment/order-comment评价",
+					"pathName": "pages/pt/order-comment/order-comment",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 129,
+					"name": "pages/pt/express-detail/express-detail物流详情",
+					"pathName": "pages/pt/express-detail/express-detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 130,
+					"name": "pages/pt/group/details拼团",
+					"pathName": "pages/pt/group/details",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 131,
+					"name": "pages/pt/order-details/order-details订单详情",
+					"pathName": "pages/pt/order-details/order-details",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 132,
+					"name": "pages/pt/order/order我的拼团",
+					"pathName": "pages/pt/order/order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 133,
+					"name": "pages/pt/order-submit/order-submit确认订单",
+					"pathName": "pages/pt/order-submit/order-submit",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 134,
+					"name": "pages/pt/details/details拼团",
+					"pathName": "pages/pt/details/details",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/pt/list/list",
+					"pathName": "pages/pt/list/list",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 136,
+					"name": "pages/pt/index/index拼团",
+					"pathName": "pages/pt/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 137,
+					"name": "pages/miaosha/order-refund-detail/order-refund-detail售后单详情",
+					"pathName": "pages/miaosha/order-refund-detail/order-refund-detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 138,
+					"name": "pages/miaosha/order-refund/order-refund申请售后",
+					"pathName": "pages/miaosha/order-refund/order-refund",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 139,
+					"name": "pages/miaosha/order-comment/order-comment评价",
+					"pathName": "pages/miaosha/order-comment/order-comment",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 140,
+					"name": "pages/miaosha/express-detail/express-detail物流详情",
+					"pathName": "pages/miaosha/express-detail/express-detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 141,
+					"name": "pages/miaosha/order-detail/order-detail订单详情",
+					"pathName": "pages/miaosha/order-detail/order-detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 142,
+					"name": "pages/miaosha/order/order订单列表",
+					"pathName": "pages/miaosha/order/order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 143,
+					"name": "pages/miaosha/order-submit/order-submit订单提交",
+					"pathName": "pages/miaosha/order-submit/order-submit",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 144,
+					"name": "pages/miaosha/details/details商品详情",
+					"pathName": "pages/miaosha/details/details",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 145,
+					"name": "pages/miaosha/miaosha整点秒杀",
+					"pathName": "pages/miaosha/miaosha",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 146,
+					"name": "pages/card-clerk/card-clerk卡券核销",
+					"pathName": "pages/card-clerk/card-clerk",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 147,
+					"name": "pages/card/card我的卡券",
+					"pathName": "pages/card/card",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 148,
+					"name": "pages/shop-goods/cat分类商品",
+					"pathName": "pages/shop-goods/cat",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 149,
+					"name": "pages/shop-detail/shop-detail店铺详情",
+					"pathName": "pages/shop-detail/shop-detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 150,
+					"name": "pages/shop/shop附近",
+					"pathName": "pages/shop/shop",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 151,
+					"name": "pages/share-qrcode/share-qrcode二维码",
+					"pathName": "pages/share-qrcode/share-qrcode",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 152,
+					"name": "pages/share-order/share-order分销订单",
+					"pathName": "pages/share-order/share-order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 153,
+					"name": "pages/share-team/share-team我的团队",
+					"pathName": "pages/share-team/share-team",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 154,
+					"name": "pages/cash-detail/cash-detail体现明细",
+					"pathName": "pages/cash-detail/cash-detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 155,
+					"name": "pages/share-money/share-money分销佣金",
+					"pathName": "pages/share-money/share-money",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 156,
+					"name": "pages/cash/cash申请提现",
+					"pathName": "pages/cash/cash",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 157,
+					"name": "pages/share/index分销中心",
+					"pathName": "pages/share/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 158,
 					"name": "pages/add-share/index申请成为分销商",
 					"pathName": "pages/add-share/index",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": 41,
-					"name": "pages/share/index分销中心",
-					"pathName": "pages/share/index",
+					"id": 159,
+					"name": "pages/order-refund-detail/order-refund-detail售后单详情",
+					"pathName": "pages/order-refund-detail/order-refund-detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 160,
+					"name": "pages/order-refund/order-refund退货退款",
+					"pathName": "pages/order-refund/order-refund",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 161,
+					"name": "pages/favorite/favorite我的收藏",
+					"pathName": "pages/favorite/favorite",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/test/test",
+					"pathName": "pages/test/test",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 163,
+					"name": "pages/address-picker/address-picker选择收货地址",
+					"pathName": "pages/address-picker/address-picker",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 164,
+					"name": "pages/address-edit/address-edit编辑地址",
+					"pathName": "pages/address-edit/address-edit",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 165,
+					"name": "pages/address/address收货地址",
+					"pathName": "pages/address/address",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 166,
+					"name": "pages/order-cancel/order-detail订单详情",
+					"pathName": "pages/order-cancel/order-detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 167,
+					"name": "pages/promotion/list（该类目暂无内容）",
+					"pathName": "pages/promotion/list",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 168,
+					"name": "pages/order/order订单列表",
+					"pathName": "pages/order/order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 169,
+					"name": "pages/order-submit/order-submit结算",
+					"pathName": "pages/order-submit/order-submit",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 170,
+					"name": "pages/qrcode/index会员码",
+					"pathName": "pages/qrcode/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 171,
+					"name": "pages/shoplist/shop附近",
+					"pathName": "pages/shoplist/shop",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 172,
+					"name": "pages/find/submit-fund/index找药申请",
+					"pathName": "pages/find/submit-fund/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 173,
+					"name": "pages/find/fund-detail/index我的找药需求",
+					"pathName": "pages/find/fund-detail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 174,
+					"name": "pages/find/fund/index我的找药",
+					"pathName": "pages/find/fund/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 175,
+					"name": "pages/find/intro/index药品详情",
+					"pathName": "pages/find/intro/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 176,
+					"name": "pages/find/store/index有货门店",
+					"pathName": "pages/find/store/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 177,
+					"name": "pages/find/detail/index搜索",
+					"pathName": "pages/find/detail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 178,
+					"name": "pages/find/list/index药品搜索",
+					"pathName": "pages/find/list/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 179,
+					"name": "pages/find/product/index导航找药",
+					"pathName": "pages/find/product/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 180,
+					"name": "pages/search/search搜索",
+					"pathName": "pages/search/search",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 181,
+					"name": "pages/update-phone/index修改手机号",
+					"pathName": "pages/update-phone/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 182,
+					"name": "pages/user-info/index会员详情",
+					"pathName": "pages/user-info/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 183,
+					"name": "pages/binding/index员工绑定",
+					"pathName": "pages/binding/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 184,
+					"name": "pages/user/user个人中心",
+					"pathName": "pages/user/user",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 185,
+					"name": "pages/list/list商品列表",
+					"pathName": "pages/list/list",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 186,
+					"name": "pages/goods/goods商品详情",
+					"pathName": "pages/goods/goods",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 187,
+					"name": "pages/cart/cart购物车",
+					"pathName": "pages/cart/cart",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 188,
+					"name": "pages/index/index首页",
+					"pathName": "pages/index/index",
 					"query": "",
 					"scene": null
 				}

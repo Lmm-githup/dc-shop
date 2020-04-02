@@ -1,10 +1,9 @@
 <template name="dingwei">
   <view class="location-header" bindtap="switchShop">
-    <image wx:if="{{shop.name}}" src="../../images/adress.png" mode="widthFix"></image>
-    <text wx:if="{{shop.name}}">{{shop.name}}   [切换]</text>
+    <text wx:if="{{shop.name}}">{{shop.name}}   [切换] </text>
     <text wx:if="{{!shop.name}}">正在定位附近门店...</text>
-    <image bindtap="handleScan" src="../../images/scan.png" style="width:20px;height:20px;position:absolute;right:59px;margin-top:10px;"></image>
-        <image bindtap="dingweiQucode" src="../../images/qrcode.png" style="width:24px;height:24px;position:absolute;right:15px;margin-top:8px;"></image>
+    <image bindtap="handleScan" src="../../images/scan.png" style="width:22px;height:20px;position:absolute;right:59px;margin-top:10px;"></image>
+    <image bindtap="dingweiQucode" src="../../images/qrcode.png" style="width:20px;height:20px;position:absolute;right:15px;margin-top:10px;"></image>
   </view>
 </template>
 <!-- 图片模态框展示 -->
@@ -35,6 +34,9 @@
 </template>
 <!-- 循环图片展示并且可以跳转页面 -->
 <template name="block-4-1">
+  <view style="background:#fff;margin-top:-10rpx">
+      <!-- 设置可以显示头部名称 -->
+    <view wx:if="{{block.id == 13}}" class="make-block-name">{{block.name}}</view>
     <view class="flex-row user-block {{store.cut_thread==0?'m-0':''}}" style="height: 186rpx;">
         <view class="flex-grow-1" style="height: 100%;" wx:for="{{block.data.pic_list}}" wx:for-index="pic_index" wx:for-item="pic_one" wx:key="{{pic_one.id}}">
             <navigator appId="{{pic_one.appId}}" bindtap="navigatorClick" data-open_type="{{pic_one.open_type}}" data-url="{{pic_one.url}}" path="{{pic_one.path}}" style="display:block;font-size: 0;width: 100%;height: 100%;" target="{{pic_one.open_type=='wxapp'?'miniProgram':''}}" url="{{pic_one.url}}">
@@ -42,8 +44,9 @@
             </navigator>
         </view>
     </view>
+  </view>
 </template>
-<!-- 宽高不同图片展示并且可以跳转页面 -->
+<!-- 宽高不同图片展示并且可以跳转页面 4代表数组长度0是style后台-->
 <template name="block-4-0">
     <view class="flex-row user-block {{store.cut_thread==0?'m-0':''}}" style="height: 360rpx;">
         <view class="flex-grow-0" style="width: 300rpx;height: 100%;">
@@ -84,25 +87,32 @@
 </template>
 <!-- 高度不同图片展示并且可以跳转页面 -->
 <template name="block-3-0">
-    <view class="flex-row user-block {{store.cut_thread==0?'m-0':''}}" style="height: 360rpx;">
-        <view class="flex-grow-0" style="width: 300rpx;height: 100%;">
+    <!-- 这里是个判断如果id==10的话就显示标题字 -->
+   <view style="background:#fff">
+    <view wx:if="{{block.id == 10}}" class="health-block-name">{{block.name}}</view>
+    <view class="flex-row user-block {{store.cut_thread==0?'m-0':''}}" style="height: 340rpx;">
+        <view class="flex-grow-0" style="width: 300rpx;height: 100%;margin-right:1%;">
             <navigator appId="{{block.data.pic_list[0].appId}}" bindtap="navigatorClick" data-open_type="{{block.data.pic_list[0].open_type}}" data-url="{{block.data.pic_list[0].url}}" path="{{block.data.pic_list[0].path}}" style="display:block;font-size: 0;width: 100%;height: 100%;" target="{{block.data.pic_list[0].open_type=='wxapp'?'miniProgram':''}}" url="{{block.data.pic_list[0].url}}">
-                <image mode="aspectFill" src="{{block.data.pic_list[0].pic_url}}" style="width: 100%;height: 100%;"></image>
+            <!-- 此处因为布局注释了mode="aspectFill"需要时可加 -->
+                <image src="{{block.data.pic_list[0].pic_url}}" style="width: 100%;height: 100%;"></image>
             </navigator>
         </view>
         <view class="flex-grow-1 flex-col" style="height: 100%;">
-            <view class="flex-grow-1" style="height: 50%;">
+            <view class="flex-grow-1" style="height: 49%;margin-bottom:2%">
                 <navigator appId="{{block.data.pic_list[1].appId}}" bindtap="navigatorClick" data-open_type="{{block.data.pic_list[1].open_type}}" data-url="{{block.data.pic_list[1].url}}" path="{{block.data.pic_list[1].path}}" style="display:block;font-size: 0;width: 100%;height: 100%;" target="{{block.data.pic_list[1].open_type=='wxapp'?'miniProgram':''}}" url="{{block.data.pic_list[1].url}}">
-                    <image mode="aspectFill" src="{{block.data.pic_list[1].pic_url}}" style="width: 100%;height: 100%;"></image>
+                   <!-- 此处因为布局注释了mode="aspectFill"需要时可加 -->
+                    <image src="{{block.data.pic_list[1].pic_url}}" style="width: 100%;height: 100%;"></image>
                 </navigator>
             </view>
-            <view class="flex-grow-1" style="height: 50%">
+            <view class="flex-grow-1" style="height: 49%">
                 <navigator appId="{{block.data.pic_list[2].appId}}" bindtap="navigatorClick" data-open_type="{{block.data.pic_list[2].open_type}}" data-url="{{block.data.pic_list[2].url}}" path="{{block.data.pic_list[2].path}}" style="display:block;font-size: 0;width: 100%;height: 100%;" target="{{block.data.pic_list[2].open_type=='wxapp'?'miniProgram':''}}" url="{{block.data.pic_list[2].url}}">
-                    <image mode="aspectFill" src="{{block.data.pic_list[2].pic_url}}" style="width: 100%;height: 100%;"></image>
+                <!-- 此处因为布局注释了mode="aspectFill"需要时可加 -->
+                    <image src="{{block.data.pic_list[2].pic_url}}" style="width: 100%;height: 100%;"></image>
                 </navigator>
             </view>
         </view>
     </view>
+ </view>
 </template>
 <!-- 循环图片展示并且可以跳转页面 -->
 <template name="block-2-1">
@@ -142,7 +152,7 @@
     <view>
         <view class="flex flex-row flex-y-center" style="background: #fff;height: 80rpx;position: relative;">
             <view class="flex-grow-1 flex-y-center center-blue-1">
-                <!-- <image src="{{__wxapp_img.store.good_shop.url}}" style="width: 36rpx;height: 36rpx;margin-right: 12rpx"></image> -->
+            <image src="{{__wxapp_img.store.good_shop.url}}" style="width: 36rpx;height: 36rpx;margin-right: 12rpx"></image>
                <view class="mch-blue">
                 <text>{{item.title}}</text>
                 <span class="mch-blue-position"></span>
@@ -190,8 +200,8 @@
     <view class="user-block">
         <view class="flex-row miaosha-header">
             <view class="flex-grow-1 flex-row flex-y-center">
-                <image src="{{__wxapp_img.system.yuyue.url}}" style="width: 34rpx;height: 34rpx;margin-right: 12rpx"></image>
-                <view style="color: #ff8b57;margin-right: 16rpx">预约</view>
+                <!-- <image src="{{__wxapp_img.system.yuyue.url}}" style="width: 34rpx;height: 34rpx;margin-right: 12rpx"></image> -->
+                <view style="color: #ff8b57;margin-right: 16rpx;font-weight:bold;font-size:15px">门店预约</view>
             </view>
             <navigator class="flex-grow-0 flex-row flex-y-center" url="/pages/book/index/index">
                 <view style="margin-right: 14rpx">更多</view>
@@ -203,9 +213,9 @@
                 <navigator class="flex-grow-0 miaosha-goods" style="width:352rpx" url="/pages/book/details/details?id={{item.id}}" wx:for="{{yuyue}}" wx:key="{{item.id}}">
                     <form bindsubmit="_formIdSubmit" reportSubmit="true">
                         <button formType="submit" id="_formIdSubmit">
-                            <image mode="aspectFill" src="{{item.cover_pic}}" style="width:325rpx;height:325rpx;"></image>
+                            <image mode="aspectFill" src="{{item.cover_pic}}" style="width:100%;height:325rpx;"></image>
                             <view class="text-more-2">{{item.name}}</view>
-                            <view class="flex-row flex-y-center" style="color: #ff4544;line-height: 1;text-overflow: ellipsis;overflow: hidden;white-space: nowrap">
+                            <view class="flex-row flex-y-center" style="color: #ff4544;line-height: 1;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;margin-bottom: 10rpx;">
                                 <block wx:if="{{item.price>0}}">
                                     <view>￥</view>
                                     <view style="font-size:13pt">{{item.price}}</view>
@@ -265,11 +275,10 @@
         <view class="flex-row miaosha-header">
             <view class="flex-grow-1 flex-row flex-y-center">
                 <!-- <image src="{{__wxapp_img.miaosha.miaosha.url}}" style="width: 34rpx;height: 34rpx;margin-right: 12rpx"></image> -->
-                <view style="font-size: 12pt;color: black;margin-right: 16rpx;position:relative;font-weight:bold">整点秒杀<span class="time-blue"></span></view>
+                <view style="font-size: 12pt;color: black;margin-right: 16rpx;position:relative;font-weight:bold"><image src="/images/index-miaosha.png" mode="widthFix" style="width:130rpx"></image></view>
                 <view style="margin-right: 24rpx" wx:if="{{miaosha.date}}">{{miaosha.date}}</view>
                 <view style="margin-right: 24rpx">{{miaosha.name}}</view>
-                <!-- wx:if="{{!miaosha.ms_next&&miaosha.times}}" -->
-                <block>
+                <block wx:if="{{!miaosha.ms_next&&miaosha.times}}">
                     <!-- 此处是时分秒 -->
                   <view style="border:1px solid black;display:flex">
                     <view class="time-dao">倒计时</view>
@@ -298,21 +307,27 @@
                 <image src="{{__wxapp_img.store.jiantou_r.url}}" style="width: 12rpx;height: 22rpx"></image>
             </navigator>
         </view>
-        <scroll-view scrollX="true" style="background: #fff;padding: 16rpx 8rpx">
+        <scroll-view scrollX="true" style="padding: 10rpx 0rpx;border-radius:10px">
             <view class="flex-row miaosha-goods-list">
-                <navigator class="flex-grow-0 miaosha-goods" style="background: #fff;" url="/pages/miaosha/details/details?id={{item.id}}" wx:for="{{miaosha.goods_list}}" wx:key="{{item.id}}">
+                <!-- background: #fff; -->
+                <navigator class="flex-grow-0 miaosha-goods" style="" url="/pages/miaosha/details/details?id={{item.id}}" wx:for="{{miaosha.goods_list}}" wx:key="{{item.id}}">
                     <form bindsubmit="_formIdSubmit" reportSubmit="true">
                         <button formType="submit" id="_formIdSubmit">
-                            <image mode="aspectFill" src="{{item.pic}}" style="padding:10px;"></image>
-                            <view class="text-more-2" style="font-size:9pt;">{{item.name}}</view>
-                            <view class="flex-row flex-y-center flex-x-center text-more" style="color: #ff4544;">
-                                <view>￥</view>
-                                <view style="font-size:13pt">{{item.miaosha_price}}</view>
+                          <view class="miaosha_imgbox">
+                            <view class="miaosha_small"><image src="../../images/miaosha-small.png"></image><i>秒杀</i></view>
+                            <image mode="aspectFill" src="{{item.pic}}" style="padding:10px;margin: 0 20px;"></image>
                             </view>
-                            <view class="flex-y-center flex-x-center text-more fs-sm" style="color: #aaa;text-decoration:line-through">
+                            <view class="text-more-2" style="font-size:9pt;padding: 0 10rpx;">{{item.name}}</view>
+                            <view class="flex-row flex-y-center flex-x-center text-more" style="color: #ff4544;margin: 10rpx 0;">
+                                <view style="width:100%;text-align:left">￥<span style="font-size:13pt">{{item.miaosha_price}}</span>
+                                   <span style="color: #aaa;text-decoration:line-through;padding-left: 15rpx;">￥{{item.price}}</span>
+                                </view>
+                                <!-- <view style="font-size:13pt">{{item.miaosha_price}}</view> -->
+                            </view>
+                            <!-- <view class="flex-y-center flex-x-center text-more fs-sm" style="color: #aaa;text-decoration:line-through">
                                 <view>￥</view>
                                 <view>{{item.price}}</view>
-                            </view>
+                            </view> -->
                         </button>
                     </form>
                 </navigator>
@@ -321,15 +336,15 @@
     </view>
 </template>
 <!-- 商品分类展示栏（竖向）-->
-<template name="cat" wx:if="{{cat_item.name=='cat'||cat_item.cat_id==cat.id}}">
-    <block  wx:for="{{cat_list}}" wx:for-index="cat_index" wx:for-item="cat" wx:key="{{cat.id}}">
-        <view style="margin-bottom: 10rpx; width:100%;overflow-x: hidden;" wx:if="{{cat.goods_list.length>0}}">
+<template name="cat">
+    <block  wx:for="{{cat_list}}" wx:for-index="cat_index" wx:for-item="cat" wx:key="{{cat.id}}" wx:if="{{cat_item.name=='cat'||cat_item.cat_id==cat.id}}">
+        <view style="background: #fff;margin-bottom: 10rpx; width:100%;overflow-x: hidden;" wx:if="{{cat.goods_list.length>0}}">
             <view class="title-bar flex-y-center flex-x-center">
                 <!-- <view class="title-line"></view> -->
                 <view class="title flex-y-center" style="position:relative">
                     <image mode="aspectFill" src="{{cat.pic_url}}" wx:if="{{cat.pic_url}}"></image>
                     <text style="font-size:15px;font-weight:bold">{{cat.name}}</text>
-                    <span style="position:absolute;width:100%;height:6px;background:#00cafc;border-radius: 6px;top:15px;left:0;opacity:0.7"></span>
+                    <!-- <span style="position:absolute;width:100%;height:6px;background:#00cafc;border-radius: 6px;top:15px;left:0;opacity:0.7"></span> -->
                 </view>
                 <!-- <view class="title-line"></view> -->
                 <navigator class="flex-y-center" url="/pages/list/list?cat_id={{cat.id}}">
@@ -337,6 +352,8 @@
                     <image src="{{__wxapp_img.store.jiantou_r.url}}"></image>
                 </navigator>
             </view>
+            <!-- 广告图 -->
+            <view class="poster"><image src="{{cat.advert_pic}}" mode="widthFix"></image></view>
             <view class="goods-list flex-row goods-list-cols-{{cat_goods_cols}}" wx:if="{{cat_goods_cols==1}}">
                 <view class="products_container" wx:for="{{cat.goods_list}}" wx:for-index="goods_index" wx:for-item="goods" wx:key="{{goods.id}}">
                     <navigator class="products_item flex-row shop-item" url="/pages/goods/goods?id={{goods.id}}">
@@ -454,7 +471,7 @@
         </button>
     </form>
 </template>
-<!-- 展示导航 -->
+<!-- 功能按钮（多个图标） -->
 <template name="nav">
     <view class="nav-icon-list flex-row" wx:if="{{nav_icon_list&&nav_icon_list.length>0}}">
         <view class="flex-grow-0 nav-icon{{nav_count==1?'-1':''}}" wx:for="{{nav_icon_list}}" wx:key="{{item.id}}">
@@ -493,18 +510,20 @@
 <!-- 轮播图 -->
 <template name="banner">
     <view class="banner-swiper">
-        <view class="position-red" style="width:100%;height:100px;background:#fd6758"></view>
+        <!-- <view class="position-red" style="width:100%;height:100px;background:#fd6758"></view> -->
         <swiper autoplay="true" circular="true" class="banner" duration="300" indicatorDots="true" interval="5000"  indicator-color="#eee" indicator-active-color="#fd6758">
             <swiper-item wx:for="{{banner_list}}" wx:key="{{item.id}}">
                 <navigator appId="{{item.appId}}" path="{{item.path}}" target="miniProgram" wx:if="{{item.open_type=='wxapp'}}">
                     <view class="slide-title">{{item.title}}</view>
-                    <image class="slide-image" mode="aspectFill" src="{{item.pic_url}}"></image>
+                    <!-- mode="aspectFill" -->
+                    <image class="slide-image" src="{{item.pic_url}}"></image>
                 </navigator>
                 <form bindsubmit="_formIdSubmit" data-type="navigate" data-url="{{item.page_url}}" reportSubmit="true" wx:else>
                     <button formType="submit" id="_formIdSubmit">
                         <navigator bindtap="navigatorClick" data-open_type="{{item.open_type}}" data-url="{{item.page_url}}" openType="{{item.open_type?item.open_type:'navigator'}}">
                             <view class="slide-title">{{item.title}}</view>
-                            <image class="slide-image" mode="aspectFill" src="{{item.pic_url}}"></image>
+                            <!-- mode="aspectFill" -->
+                            <image class="slide-image" src="{{item.pic_url}}"></image>
                         </navigator>
                     </button>
                 </form>
@@ -512,7 +531,7 @@
         </swiper>
     </view>
 </template>
-<!-- 类似一个公告 -->
+<!-- 这是一个横向转播的公告 -->
 <template name="notice">
     <view bindtap="showNotice" class="notice flex-row" style="color:{{update_list.notice.color}};background-color:{{update_list.notice.bg_color}}" wx:if="{{notice}}">
         <view class="flex-grow-0 flex-y-center notice-a">
@@ -528,6 +547,7 @@
             <image src="{{__wxapp_img.notice.jiantou.url}}" style="width:10rpx;height:18rpx;margin-left:32rpx;"></image>
         </view>
     </view>
+    <!-- 点击公告会告诉我知道了一个模态框 -->
     <view class="notice-modal flex-y-center flex-x-center {{show_notice?'':'hidden'}}">
         <view style="margin-top:-200rpx;">
             <image class="notice-img" src="{{__wxapp_img.notice.title.url}}"></image>
@@ -542,7 +562,7 @@
         </view>
     </view>
 </template>
-<!-- 购买时间 -->
+<!-- 头部没有条件的显示购买时间 -->
 <template name="buy-data">
     <form bindsubmit="_formIdSubmit" data-bind="test" data-type="navigate" data-url="{{buy.url}}" reportSubmit="true">
         <button formType="submit" id="_formIdSubmit">
@@ -554,7 +574,7 @@
     </form>
 </template>
 
-<!--附近门店-->
+<!--定位到附近门店（总店之类的）-->
 <template name="location">
     <view class="location-list">
         <navigator url="/pages/shop-goods/cat?id={{item.shop_id}}" class="location-item flex-row" wx:for="{{location_list}}" wx:key="{{item.shop_id}}">

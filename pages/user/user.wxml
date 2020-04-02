@@ -43,6 +43,12 @@
                             <view class="flex-x-center" style="margin-top: 10rpx;">
                                 <text class="user-name">{{user_info.nickname}}</text>
                             </view>
+                            <view class="flex-grow-0 flex-y-center userinfo-addr">
+                              <navigator class="my-address flex-y-center" url="/pages/address/address" style="position:absolute;right:0;top:48%">
+                                  <image src="{{__wxapp_img.store.address.url}}"></image>
+                                  <text>收货地址</text>
+                              </navigator>
+                           </view>
                         </view>
                     </view>
                     <!-- 原本{{user_center_bg}} -->
@@ -103,7 +109,7 @@
                     <view class="flex-grow-0 wallet-1 flex-x-center flex-y-center" wx:if="{{a==1}}" style="{{wallet.re==1?'width:33%;':''}}">
                         <view class="flex-grow-1 flex-y-center flex-col" style="border-left:1px solid #ccc">
                             <navigator hoverClass="none" url="/pages/balance/balance">
-                                <view class="num-1 flex-x-center">{{user_info.money}}</view>
+                     王           <view class="num-1 flex-x-center">{{user_info.money}}</view>
                                 <view class="flex-row num-2 flex-x-center">
                                     <image class="flex-grow-0" src="{{wallets.status_1.icon}}" style="width:26rpx;height:26rpx;margin-right:10rpx;"></image>
                                     <view class="flex-grow-0">{{wallets.status_1.text}}</view>
@@ -113,7 +119,7 @@
                     </view>
                 </view>
                 <view class="order-block" wx:if="{{setting&&setting.is_order==1}}">
-                    <navigator class="my-order" url="/pages/order/order?status=-1">我的订单<text style="position:absolute;right:15rpx;font-size:12px;">全部订单></text></navigator>
+                    <navigator class="my-order" url="/pages/order/order?status=-1"><image src="/images/user-order.png" mode="widthFix" style="width:100rpx"></image><text style="position:absolute;right:15rpx;font-size:12px;">全部订单</text></navigator>
                     <view class="flex-row">
                         <view class="flex-grow-1">
                             <navigator class="nav-item" url="/pages/order/order?status=0">
@@ -273,7 +279,7 @@
                 </view>
                 <!-- 功能服务 -->
                 <view class="options-list" style="background-color: #fff;" wx:if="{{style.menu==1&&wallet.is_menu==1}}">
-                    <view class="function">功能服务</view>
+                    <view class="function"><image src="/images/user-function.png" mode="widthFix" style="width:100rpx"></image></view>
                     <view class="flex-row" style="flex-wrap: wrap">
                         <block wx:for="{{menus}}" wx:key="{{item.id}}">
                             <block wx:if="{{item.open_type=='navigator'}}">
