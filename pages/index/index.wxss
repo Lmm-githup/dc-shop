@@ -1046,3 +1046,11 @@
 .miaosha_small image{width:100%;height: 100%}
 .poster{width: 90%;margin: 0 auto; margin-top:40rpx}
 .poster image{width: 100%;border-radius: 5px}
+.fast{width:100rpx;height: 100rpx;background:rgba(0,0,0,0.4);border-radius: 50%;position: fixed;right: 5%;z-index: 999;bottom: 20%;color: #fff;text-align: center;}
+.fast-true{padding-top: 33rpx}
+.fast-false{padding-top: 18rpx}
+.fast-phone image{width: 100rpx;height: 100rpx}
+.fast-customer image{width: 100rpx;height: 100rpx}
+.fast-phone{position: fixed;right: 5%;z-index: 999;bottom: 29%;}
+.fast-customer{position: fixed;right: 5%;z-index: 999;bottom: 38%;background-color: transparent;padding: 0;}
+.fast-customer::after {border: none;}

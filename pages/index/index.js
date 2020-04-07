@@ -25,6 +25,7 @@ Page({
     userLoginPwd: '',
     is_delete: 0,
     account_login: 1,
+    phone:false//快捷导航电话默认隐藏
   },
   onLoad: function(t) {
     getApp().page.onLoad(this, t);//app.js的args.page.onload
@@ -399,5 +400,15 @@ Page({
     getApp().core.navigateTo({
       url: "/pages/qrcode/index"
     });
-  }
+  },
+  // 点击快捷导航
+  phoneOpen:function(){
+    this.setData({phone:!this.data.phone})
+  },
+  // 点击打电话
+  phoneBtn: function () {
+    getApp().core.makePhoneCall({
+      phoneNumber: "18712312312"
+    });
+  },
 });

@@ -35,10 +35,10 @@
                         <view bindtap="deleteSearchHistory" class="delete-search-history">
                             <image src="{{__wxapp_img.store.delete.url}}" style="width: 28rpx;height: 34rpx"></image>
                         </view>
-                    </view>
+                    </view> 
                     <view class="search-history-list">
                         <view bindtap="historyClick" class="search-history-item" data-value="{{item.keyword}}" wx:for="{{history_list}}" wx:key="{{item.id}}">{{item.keyword}}
-                                </view>
+                        </view>
                     </view>
                 </view>
                 <block wx:if="{{show_result}}">

@@ -2,11 +2,14 @@
 <view class="page {{__page_classes}}">
     <include src="/components/common/common"></include>
     <include src="/components/header/header"></include>
+    <!-- 定位一个快捷导航 -->
+    <view class="fast {{phone?'fast-true':'fast-false'}}" catchtap="phoneOpen"><text>{{phone?"收起":"快捷\n导航"}}</text></view>
+    <view class="fast-phone" catchtap="phoneBtn" wx:if="{{phone}}"><image src="../../images/phone.png"/></view>
+    <button class="fast-customer" openType="contact" wx:if="{{phone}}"><image src="../../images/customer.png"/></button>
     <view class="body after-navber">
        <template is="dingwei" data="{{shop}}"></template>
         <template is="buy-data" data="{{buy:buy}}"></template>
         <block wx:for="{{module_list}}" wx:key="{{item.id}}">
-            <!-- <view>{{item.name}}</view> -->
             <template is="notice" data="{{notice:notice,update_list:update_list,__wxapp_img:__wxapp_img,show_notice:show_notice,item:item}}" wx:if="{{item.name=='notice'}}"></template>
             <template is="banner" data="{{banner_list:banner_list,item:item}}" wx:elif="{{item.name=='banner'}}"></template>
             <template is="location" data="{{location_list:location_list,item:item}}" wx:elif="{{item.name=='location'}}"></template>
@@ -27,6 +30,6 @@
         </block>
         <template is="act-modal" data="{{__wxapp_img:__wxapp_img,act_modal_list:act_modal_list}}" wx:if="{{act_modal_list&&act_modal_list.length>0}}"></template>
     </view>
-    <view wx:if="{{!isFocus}}" style="height:45px;"> </view>
+    <view wx:if="{{!isFocus}}" style="height:45px;"></view>
     <official-account wx:if="{{!isFocus}}" style="position:fixed;bottom:{{isIpx? '73px' : '45px'}};width:100%;"></official-account>
 </view>

@@ -14,7 +14,7 @@
         <view class="new-modal-header" style="padding:80px 30rpx 0;line-height:80rpx;"></view>
         <view class="new-modal-body" style="min-height:0;margin-bottom:0;max-height:none">
             <view style="padding:52rpx 0 0 0;text-align: center">
-                <view><image src="/images/logored.png" mode="widthFix" style="width:516rpx;"></image></view>
+                <view><image src="/images/logoreds.png" mode="widthFix" style="width:516rpx;"></image></view>
                 <view style="font-size:14px;width:100%;text-align:left;padding:50px 15%;">您暂未授权德成鸿业小程序获取你的信息,将无法正常使用小程序功能。如需要正常使用，请点击”授权“按钮</view>
             </view>
             <view class="flex-x-center">
@@ -31,7 +31,7 @@
             <view class="new-modal-header" style="padding:30rpx 0;line-height:60rpx;font-size:11pt;"> </view>
             <view class="new-modal-body" style="min-height:0;margin-bottom:0;">
                 <view style="padding:32rpx 0 20rpx 0;text-align: center">
-                    <view><image src="/images/logored.png" mode="widthFix" style="width:516rpx;margin:50px 0px;"></image></view>
+                    <view><image src="/images/logoreds.png" mode="widthFix" style="width:516rpx;margin:50px 0px;"></image></view>
                 </view>
                 <view style="padding:0 41rpx;">
                     <!--<view class="flex-x-center" style="margin-bottom:40rpx;font-size:14px;">申请获取您微信绑定的手机号</view>-->
@@ -52,7 +52,7 @@
             <view class="new-modal-header" style="padding:30rpx 0;line-height:60rpx;font-size:11pt;"></view>
             <view class="new-modal-body" style="min-height:0;margin-bottom:0;max-height:600px;">
                 <view style="padding:32rpx 0 20rpx 0;text-align: center">
-                    <view><image src="/images/logored.png" mode="widthFix" style="width:516rpx;margin:50px 0px;"></image></view>
+                    <view><image src="/images/logoreds.png" mode="widthFix" style="width:516rpx;margin:50px 0px;"></image></view>
                 </view>
                 <view style="margin-bottom:30px;padding:0px 50px;font-size:14px;">
                    <input style="border-bottom:1px solid #ddd;line-heihgt:50px;height:50px;padding:0px 8px;" bindinput="bindKeyLoginAccount" placeholder="请输入账号" maxlength="16"></input>

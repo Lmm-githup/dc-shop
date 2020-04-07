@@ -83,23 +83,9 @@
 					"scene": null
 				},
 				{
-					"id": 57,
-					"name": "bargain/list/list砍价",
-					"pathName": "bargain/list/list",
-					"query": "",
-					"scene": null
-				},
-				{
 					"id": 59,
 					"name": "pages/cat/cat分类",
 					"pathName": "pages/cat/cat",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/update-phone/index修改手机号",
-					"pathName": "pages/update-phone/index",
 					"query": "",
 					"scene": null
 				},

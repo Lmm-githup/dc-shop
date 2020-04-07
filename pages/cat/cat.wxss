@@ -137,8 +137,8 @@
 }
 
 .cat-small-style .cat-item .cat-icon {
-    width: 62rpx;
-    height: 62rpx;
+    width: 95rpx;
+    height: 95rpx;
 }
 
 .cat-small-style .cat-item .cat-name {

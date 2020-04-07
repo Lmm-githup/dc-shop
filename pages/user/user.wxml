@@ -109,7 +109,7 @@
                     <view class="flex-grow-0 wallet-1 flex-x-center flex-y-center" wx:if="{{a==1}}" style="{{wallet.re==1?'width:33%;':''}}">
                         <view class="flex-grow-1 flex-y-center flex-col" style="border-left:1px solid #ccc">
                             <navigator hoverClass="none" url="/pages/balance/balance">
-                     王           <view class="num-1 flex-x-center">{{user_info.money}}</view>
+                               <view class="num-1 flex-x-center">{{user_info.money}}</view>
                                 <view class="flex-row num-2 flex-x-center">
                                     <image class="flex-grow-0" src="{{wallets.status_1.icon}}" style="width:26rpx;height:26rpx;margin-right:10rpx;"></image>
                                     <view class="flex-grow-0">{{wallets.status_1.text}}</view>
@@ -282,7 +282,9 @@
                     <view class="function"><image src="/images/user-function.png" mode="widthFix" style="width:100rpx"></image></view>
                     <view class="flex-row" style="flex-wrap: wrap">
                         <block wx:for="{{menus}}" wx:key="{{item.id}}">
+                        
                             <block wx:if="{{item.open_type=='navigator'}}">
+                                <!-- 分销商 -->
                                 <block wx:if="{{item.id=='fenxiao'}}">
                                     <block wx:if="{{share_setting.level>0}}">
                                         <view class="option-item flex-grow-0 style" wx:if="{{user_info.is_distributor!=1}}">
@@ -321,7 +323,9 @@
                                         </view>
                                     </button>
                                 </form>
+                                <!-- 分销商 -->
                             </block>
+
                             <navigator bindtap="callTel" class="option-item flex-grow-0 style" data-tel="{{item.tel}}" wx:elif="{{item.open_type=='tel'}}">
                                 <view>
                                     <view class="flex-x-center">
@@ -330,6 +334,7 @@
                                     <view class="text-more-2" style="text-align: center">{{item.name}}</view>
                                 </view>
                             </navigator>
+                            <!-- 在线客服 -->
                             <button class="option-item flex-grow-0 style" openType="contact" plain="true" style="line-height:1;margin:0;height:100%;" wx:elif="{{item.open_type=='contact'}}">
                                 <view>
                                     <view class="flex-x-center">
@@ -338,6 +343,7 @@
                                     <view class="text-more-2" style="text-align: center">{{item.name}}</view>
                                 </view>
                             </button>
+                            <!-- 在线客服 -->
                             <view bindtap="clearCache" class="option-item flex-grow-0 style" wx:elif="{{item.open_type=='no_navigator'}}">
                                 <view>
                                     <view class="flex-x-center">
